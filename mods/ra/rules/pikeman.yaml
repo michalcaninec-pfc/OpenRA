@@ -1,0 +1,43 @@
+# Medieval melee prototype, available from either faction's barracks.
+PIKEMAN:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 15
+		Prerequisites: ~barracks, ~techlevel.infonly
+		Description: actor-pikeman.description
+	Valued:
+		Cost: 120
+	Tooltip:
+		Name: actor-pikeman.name
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 8000
+	Mobile:
+		Speed: 62
+	Armament:
+		Weapon: PikeThrust
+	WithInfantryBody:
+		StandSequences: stand
+		IdleSequences: idle
+		DefaultAttackSequence: stab
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: stand
+		RequiresCondition: parachute
+	AutoTarget:
+		ScanRadius: 5
+	-TakeCover:
+
+World:
+	StartingUnits@pikemen:
+		Class: pikemen
+		ClassName: options-starting-units-pikemen
+		Factions: allies, england, france, germany, soviet, russia, ukraine
+		BaseActor: mcv
+		SupportActors: pikeman,pikeman,pikeman,pikeman,pikeman,pikeman
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5

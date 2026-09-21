@@ -1,0 +1,25 @@
+World:
+	LuaScript:
+		Scripts: test.lua
+	SpawnStartingUnits:
+		StartingUnitsClass: pikemen
+	MapOptions:
+		ShortGameCheckboxEnabled: False
+
+Player:
+	Shroud:
+		FogCheckboxEnabled: False
+		ExploredMapCheckboxEnabled: True
+
+PIKE.TARGET:
+	Inherits: E1
+	-Buildable:
+	-AttackMove:
+	-AttackFrontal:
+	-Armament@PRIMARY:
+	-Armament@GARRISONED:
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	RenderSprites:
+		Image: e1

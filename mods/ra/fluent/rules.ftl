@@ -1115,3 +1115,9 @@ label-ra-map-generator-choice-civilian-density-very-high =
    .label = Very High
 label-ra-map-generator-choice-civilian-density-max =
    .label = Maximum
+
+actor-pikeman =
+    .name = Pikeman
+    .description = Medieval infantry armed with a long pike.
+        Melee only. Strong vs infantry, weak vs armor.
+        Cannot attack aircraft.

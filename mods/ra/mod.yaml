@@ -81,6 +81,7 @@ Rules:
 	ra|rules/husks.yaml
 	ra|rules/structures.yaml
 	ra|rules/infantry.yaml
+	ra|rules/pikeman.yaml
 	ra|rules/civilian.yaml
 	ra|rules/decoration.yaml
 	ra|rules/aircraft.yaml
@@ -93,6 +94,7 @@ Sequences:
 	ra|sequences/vehicles.yaml
 	ra|sequences/structures.yaml
 	ra|sequences/infantry.yaml
+	ra|sequences/pikeman.yaml
 	ra|sequences/aircraft.yaml
 	ra|sequences/misc.yaml
 	ra|sequences/decorations.yaml
@@ -186,6 +188,7 @@ Weapons:
 	ra|weapons/ballistics.yaml
 	ra|weapons/missiles.yaml
 	ra|weapons/other.yaml
+	ra|weapons/pikeman.yaml
 	ra|weapons/smallcaliber.yaml
 	ra|weapons/superweapons.yaml
 
@@ -270,7 +273,7 @@ SupportsMapsFrom: ra
 
 SoundFormats: Aud, Wav
 
-SpriteFormats: ShpD2, ShpTD, TmpRA, TmpTD, ShpTS
+SpriteFormats: PngSheet, ShpD2, ShpTD, TmpRA, TmpTD, ShpTS
 
 VideoFormats: Vqa, Wsa
 

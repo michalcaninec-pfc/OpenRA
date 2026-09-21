@@ -13,3 +13,5 @@ tileset-interior = Interior
 
 ## SupportPowerTimerWidget
 support-power-timer = { $player }'s { $support-power }: { $time }
+
+options-starting-units-pikemen = Pikeman company

@@ -1,0 +1,13 @@
+Validated on macOS arm64 / Apple M5 / .NET 10.0.12, 2026-09-21.
+Release build: 0 errors, 0 warnings.
+Red Alert YAML lint: passed; demo map lint: passed.
+Runtime: native graphical skirmish, Pikeman Proving Grounds.
+
+PIKEMAN TEST: Hold-position range check: target is five tiles away.
+PIKEMAN TEST: PASS: airborne helicopter is not a valid target.
+PIKEMAN TEST: PASS: trained a Pikeman through the normal barracks production queue.
+PIKEMAN TEST: PASS: no ranged damage. Now approaching for a melee attack.
+PIKEMAN HIT: damage=2500 distance=1024
+PIKEMAN HIT: damage=2500 distance=1024
+PIKEMAN TEST: PASS: moved into melee range and killed target with two pike hits.
+PIKEMAN TEST: PASS: skirmish smoke test complete. Train more Pikemen at the barracks.
