@@ -10,7 +10,7 @@ ages-barracks-desc = Trains armies of each era. Research ages in the separate Re
 ages-hut = Gathering Hub
 ages-hut-desc = Resource drop-off. Includes three Gatherers when construction finishes.
     Uses the building queue for 30 seconds at normal speed.
-    Gatherers mine slowly and carry $200 of ore per trip.
+    Gatherers deliver small, frequent loads: $50 of ore per trip.
 ages-upgrade = Industrial Age
 ages-upgrade-desc = Requires the Gunpowder Age. Permanently unlocks modern production.
     Build power, refineries and factories from the Gathering Hub.

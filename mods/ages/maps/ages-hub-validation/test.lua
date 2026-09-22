@@ -1,5 +1,6 @@
 -- Exercise the real Ages AI with paid hub production and automatic harvesting.
 local bot, human, tick, firstHub, passed = nil, nil, 0, nil, false
+local firstIncome = nil
 local function check(ok, text) if not ok then FatalError(text) end end
 WorldLoaded = function()
  Trigger.AfterDelay(25, function()
@@ -16,6 +17,11 @@ end
 Tick = function()
  tick = tick + 1
  if not bot or passed or tick % 25 ~= 0 then return end
+ if not firstIncome and human.Resources > 0 then
+  firstIncome = tick
+  print('AGES HUB: PASS first gatherer delivery at tick '..tick..' ('..(tick / 25)..' normal-speed seconds)')
+ end
+ check(firstIncome or tick < 1200, 'First gatherer delivery took too long')
  local hubs = #bot.GetActorsByType('mhut')
  local workers = #bot.GetActorsByType('worker')
  check(workers <= 3 + 3 * hubs, 'Workers trained outside hub construction')

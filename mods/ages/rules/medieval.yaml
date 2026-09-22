@@ -102,7 +102,7 @@ WORKER:
 		SearchFromHarvesterRadius: 12
 		HarvestFacings: 8
 	StoresResources:
-		Capacity: 8
+		Capacity: 2
 		Resources: Ore,Gems
 	DockClientManager:
 	SoundOnHarvest:
@@ -118,7 +118,7 @@ WORKER:
 		Position: BottomLeft
 		Margin: 4,3
 		RequiresSelection: true
-		PipCount: 5
+		PipCount: 2
 		ResourceSequences:
 			Ore: pip-yellow
 			Gems: pip-red

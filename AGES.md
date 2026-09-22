@@ -40,7 +40,7 @@ no power and fires arrows automatically.
 
 | Item | Cost | Behavior |
 | --- | ---: | --- |
-| Gatherer | Included with hub | 8-bale capacity; ore and gems; returns to Hub or Refinery |
+| Gatherer | Included with hub | 2-bale capacity; ore and gems; returns to Hub or Refinery |
 | Pikeman | 40 | 80 HP, 25 melee damage, 1.25-cell reach |
 | Archer | 60 | 45 HP, 12 base arrow damage, four-cell range |
 | Rider | 140 | 180 HP, 45 melee damage, speed 120 versus Pikeman 62 |
@@ -58,7 +58,9 @@ The starting treasury is $500. Costs now reflect progression: Pikeman $40 →
 Musketeer $120 → Rifle Infantry $200. Riders and artillery cost more because
 they fill specialized roles. These are initial balance values, not a claim of
 competitive balance. Gathering takes **160 ticks per bale versus the Harvester's 4**. Gatherers carry
-8 bales instead of 20: one ore delivery pays $200, and gems $400. Compared with
+2 bales instead of 20: one ore delivery pays $50, and gems $100.
+A load takes about 12.8 seconds of mining at normal speed, plus travel and docking,
+instead of 51.2 seconds for the previous eight-bale load. Compared with
 the previous 40-tick Gatherer, raw mining throughput is reduced by 75%; smaller
 loads add more travel per resource. Actual income also depends on travel and docking.
 
