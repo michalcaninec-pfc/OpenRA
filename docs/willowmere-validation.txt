@@ -1,0 +1,18 @@
+Willowmere smoke test — 2026-09-22
+Map refresh and Ages YAML lint: PASS
+
+Lua debug: WILLOWMERE PASS both starting armies
+Lua debug: WILLOWMERE tick 500 arrivals 0
+Lua debug: WILLOWMERE tick 1000 arrivals 0
+Lua debug: WILLOWMERE PASS route completed pikeman
+Lua debug: WILLOWMERE tick 1500 arrivals 1
+Lua debug: WILLOWMERE tick 2000 arrivals 1
+Lua debug: WILLOWMERE PASS route completed field.cannon
+Lua debug: WILLOWMERE tick 2500 arrivals 2
+Lua debug: WILLOWMERE PASS harvesting Multi0 resources 3000
+Lua debug: WILLOWMERE PASS harvesting Multi1 resources 3000
+Lua debug: WILLOWMERE E2E COMPLETE
+Lua debug: WILLOWMERE tick 3000 arrivals 2
+Lua debug: WILLOWMERE PASS harvesting Multi0 resources 3000
+Lua debug: WILLOWMERE PASS harvesting Multi1 resources 3000
+Lua debug: WILLOWMERE E2E COMPLETE
