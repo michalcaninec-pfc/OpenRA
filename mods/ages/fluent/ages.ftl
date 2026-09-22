@@ -47,3 +47,8 @@ ages-watchtower-desc = Wooden arrow tower. Six-cell range and wide vision.
 ages-palisade = Wooden Palisade
 ages-palisade-desc = Cheap connected wooden walls. Blocks ground movement.
     Place two ends to connect a straight line. Leave gaps for your army.
+
+ages-cheat-map-label = MAP
+ages-cheat-cash-label = +5k
+ages-cheat-reveal-tooltip = Cheat: toggle full map visibility (skirmish, or multiplayer with cheats enabled)
+ages-cheat-cash-tooltip = Cheat: add $5,000 to your funds (skirmish, or multiplayer with cheats enabled)

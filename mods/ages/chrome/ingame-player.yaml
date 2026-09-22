@@ -316,7 +316,7 @@ Container@PLAYER_WIDGETS:
 			ClickThrough: false
 			Children:
 				Container@TOP_BUTTONS:
-					Logic: MenuButtonsChromeLogic
+					Logic: MenuButtonsChromeLogic, AgesCheatLogic
 					X: 9
 					Y: 7
 					Children:
@@ -379,6 +379,28 @@ Container@PLAYER_WIDGETS:
 									X: 6
 									Y: 6
 									ImageCollection: order-icons
+						Button@AGES_REVEAL:
+							X: 128
+							Width: 28
+							Height: 28
+							Background: button
+							VisualHeight: 0
+							Font: TinyBold
+							Text: ages-cheat-map-label
+							TextColor: 8FE6FF
+							TooltipText: ages-cheat-reveal-tooltip
+							TooltipContainer: TOOLTIP_CONTAINER
+						Button@AGES_CASH:
+							X: 160
+							Width: 28
+							Height: 28
+							Background: button
+							VisualHeight: 0
+							Font: TinyBold
+							Text: ages-cheat-cash-label
+							TextColor: FFE08A
+							TooltipText: ages-cheat-cash-tooltip
+							TooltipContainer: TOOLTIP_CONTAINER
 						MenuButton@OPTIONS_BUTTON:
 							Logic: AddFactionSuffixLogic
 							X: 192
