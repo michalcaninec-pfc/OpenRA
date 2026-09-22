@@ -18,7 +18,7 @@ local function update(v)
  if count==1 and visitor~=v.flag.Owner then
   if v.claimant~=visitor then v.claimant=visitor;v.progress=0 end
   v.progress=v.progress+1
-  Media.FloatingText(v.progress..'/8',v.flag.CenterPosition,25,visitor.Color)
+  Media.FloatingText('Capturing '..v.progress..'/8',v.flag.CenterPosition,25,visitor.Color)
   if v.progress>=8 then
    v.flag.Owner=visitor
    print('AGES_VILLAGE|'..DateTime.GameTime..'|event=capture|village='..v.name..'|owner='..visitor.InternalName)
@@ -35,7 +35,10 @@ local function update(v)
   if v.income>=10 then
    v.flag.Owner.Cash=v.flag.Owner.Cash+25;v.income=0
    print('AGES_VILLAGE|'..DateTime.GameTime..'|event=payout|village='..v.name..'|owner='..v.flag.Owner.InternalName..'|amount=25')
-   Media.FloatingText('+$25',v.flag.CenterPosition,40,v.flag.Owner.Color)
+   -- Income feedback belongs to the local owner, not neutral or enemy villages.
+   if v.flag.Owner.IsLocalPlayer then
+    Media.FloatingText('+$25',v.flag.CenterPosition,40,v.flag.Owner.Color)
+   end
   end
  else v.income=0 end
  if seconds%5==0 then
