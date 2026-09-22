@@ -44,19 +44,30 @@ function UpdateVillageAI(states,eligible,seconds)
     elseif not v.flag.Owner.IsAlliedWith(p) then
      kind='raid';need=math.max(3,enemy+1-friendly);score=250
     end
+    if seconds%15==0 then
+     local reason=not kind and 'no_target' or (budget<need and 'insufficient_idle_budget' or 'eligible')
+     print('AGES_AI|'..DateTime.GameTime..'|event=candidate|player='..p.InternalName..'|village='..v.name..'|reason='..reason..'|need='..need..'|budget='..budget..'|army='..#army..'|available='..#available..'|friendly='..friendly..'|enemy='..enemy)
+    end
     if kind and budget>=need then
      local nearest=math.huge
      for _,a in ipairs(available) do nearest=math.min(nearest,distance(a.Location,v.flag.Location)) end
      score=score-math.sqrt(nearest)
      if score>bestScore then best=v;bestScore=score;bestNeed=need;bestKind=kind end
     end
+   elseif seconds%15==0 then
+    print('AGES_AI|'..DateTime.GameTime..'|event=candidate|player='..p.InternalName..'|village='..v.name..'|reason=cooldown|budget='..budget..'|army='..#army..'|available='..#available)
    end
   end
   if best then
    table.sort(available,function(a,b) return distance(a.Location,best.flag.Location)<distance(b.Location,best.flag.Location) end)
    local count=math.min(budget,math.max(bestNeed,bestKind=='capture' and 2 or 3))
-   for i=1,count do available[i].AttackMove(best.flag.Location+CVec.New(0,1)) end
+   local dispatched={}
+   for i=1,count do
+    dispatched[#dispatched+1]=tostring(available[i].ActorID)
+    available[i].AttackMove(best.flag.Location+CVec.New(0,1))
+   end
    cooldown[p.InternalName..best.name]=seconds+20
+   print('AGES_AI|'..DateTime.GameTime..'|event=dispatch|player='..p.InternalName..'|village='..best.name..'|action='..bestKind..'|count='..count..'|army='..#army..'|available='..#available..'|budget='..budget..'|units='..table.concat(dispatched,',')..'|target_x='..best.flag.Location.X..'|target_y='..best.flag.Location.Y)
    print('VILLAGE AI '..p.InternalName..' '..bestKind..' '..best.name..' troops='..count)
   end
  end

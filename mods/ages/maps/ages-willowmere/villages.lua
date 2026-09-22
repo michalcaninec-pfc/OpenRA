@@ -21,6 +21,7 @@ local function update(v)
   Media.FloatingText(v.progress..'/8',v.flag.CenterPosition,25,visitor.Color)
   if v.progress>=8 then
    v.flag.Owner=visitor
+   print('AGES_VILLAGE|'..DateTime.GameTime..'|event=capture|village='..v.name..'|owner='..visitor.InternalName)
    v.claimant=nil;v.progress=0;v.income=0
    Media.FloatingText('Village captured',v.flag.CenterPosition,75,visitor.Color)
    if visitor.IsLocalPlayer then Media.DisplayMessage(v.name..': +$25 / 10s','Village captured') end
@@ -33,9 +34,13 @@ local function update(v)
   v.income=v.income+1
   if v.income>=10 then
    v.flag.Owner.Cash=v.flag.Owner.Cash+25;v.income=0
+   print('AGES_VILLAGE|'..DateTime.GameTime..'|event=payout|village='..v.name..'|owner='..v.flag.Owner.InternalName..'|amount=25')
    Media.FloatingText('+$25',v.flag.CenterPosition,40,v.flag.Owner.Color)
   end
  else v.income=0 end
+ if seconds%5==0 then
+  print('AGES_VILLAGE|'..DateTime.GameTime..'|event=state|village='..v.name..'|owner='..v.flag.Owner.InternalName..'|claimant='..(v.claimant and v.claimant.InternalName or 'none')..'|progress='..v.progress..'|hostile='..tostring(hostile)..'|income_clock='..v.income)
+ end
 end
 WorldLoaded=function()
  neutral=Player.GetPlayer('Neutral')

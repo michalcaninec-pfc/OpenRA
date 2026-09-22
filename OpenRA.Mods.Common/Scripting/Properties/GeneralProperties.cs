@@ -30,6 +30,9 @@ namespace OpenRA.Mods.Common.Scripting
 		public BaseActorProperties(ScriptContext context, Actor self)
 			: base(context, self) { }
 
+		[Desc("Stable runtime actor identifier, for correlating diagnostics within this match.")]
+		public double ActorID => Self.ActorID;
+
 		[Desc("Specifies whether the actor is in the world.")]
 		public bool IsInWorld
 		{

@@ -92,6 +92,7 @@ Rules:
 	ages|rules/modern-gates.yaml
 	ages|rules/medieval.yaml
 	ages|rules/defenses.yaml
+	ages|rules/telemetry.yaml
 
 Sequences:
 	ra|sequences/ships.yaml
