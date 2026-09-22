@@ -47,6 +47,9 @@ namespace OpenRA.Mods.Common.Traits.Render
 		[Desc("When to show the range circle. Valid values are `Always`, and `WhenSelected`")]
 		public readonly RangeCircleVisibility Visible = RangeCircleVisibility.WhenSelected;
 
+		[Desc("Hide the circle when its center is outside current vision and clip its edge to visible terrain.")]
+		public readonly bool RespectFog = false;
+
 		[Desc("Range of the circle")]
 		public readonly WDist Range = WDist.Zero;
 
@@ -87,7 +90,8 @@ namespace OpenRA.Mods.Common.Traits.Render
 		{
 			get
 			{
-				if (IsTraitDisabled)
+				if (IsTraitDisabled || (Info.RespectFog &&
+					(self.World.FogObscures(self.CenterPosition) || self.World.ShroudObscures(self.CenterPosition))))
 					return false;
 
 				var p = self.World.RenderPlayer;
@@ -105,7 +109,8 @@ namespace OpenRA.Mods.Common.Traits.Render
 					Info.UsePlayerColor ? self.OwnerColor() : Info.Color,
 					Info.Width,
 					Info.BorderColor,
-					Info.BorderWidth);
+					Info.BorderWidth,
+					Info.RespectFog);
 		}
 
 		IEnumerable<IRenderable> IRenderAnnotationsWhenSelected.RenderAnnotations(Actor self, WorldRenderer wr)

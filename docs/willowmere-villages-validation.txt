@@ -23,3 +23,8 @@ Lua debug: VILLAGE AI TEST PASS defense takes priority over enemy raid dispatche
 Lua debug: VILLAGE AI Multi1 raid Eastmere troops=3
 Lua debug: VILLAGE AI TEST PASS group raid with reserve dispatched=3 reserve=3
 Lua debug: VILLAGE AI TEST E2E COMPLETE
+
+Fog visibility fix — 2026-09-22
+Release build: 0 warnings, 0 errors. Ages YAML lint: PASS.
+Native-window visual checks: unrevealed center has no ring; visible center with partial sight shows only visible arc; explored center outside current sight hides ring again.
+FloatingText renderer already checks fog and shroud.

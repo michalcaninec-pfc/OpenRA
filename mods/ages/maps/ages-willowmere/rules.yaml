@@ -24,6 +24,7 @@ VILLAGE.CENTER:
 	RevealsShroud:
 		Range: 5c0
 	WithRangeCircle:
+		RespectFog: true
 		Range: 5c512
 		UsePlayerColor: true
 		Visible: Always
