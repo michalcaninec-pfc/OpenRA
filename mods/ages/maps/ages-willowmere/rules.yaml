@@ -1,3 +1,32 @@
 ^Palettes:
 	PaletteFromFile@terrain-temperat:
 		Filename: greywater-summer.pal
+
+World:
+	LuaScript:
+		Scripts: villages-ai.lua, villages.lua
+
+VILLAGE.CENTER:
+	Inherits: CTFLAG
+	RenderSprites:
+		Image: ctflag
+		PlayerPalette: player
+	-WithBuildingBib:
+	-Demolishable:
+	-Huntable:
+	-CaptureNotification:
+	Tooltip:
+		Name: willowmere-village
+		ShowOwnerRow: true
+	TooltipDescription:
+		Description: willowmere-village-description
+		ValidRelationships: Ally, Neutral, Enemy
+	RevealsShroud:
+		Range: 5c0
+	WithRangeCircle:
+		Range: 5c512
+		UsePlayerColor: true
+		Visible: Always
+		ValidRelationships: Ally, Neutral, Enemy
+		Width: 2
+	AppearsOnMapPreview:

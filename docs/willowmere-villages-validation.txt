@@ -1,0 +1,25 @@
+Willowmere villages and objective AI — 2026-09-22
+
+OpenRA YAML lint and map refresh: PASS
+Structural route/resource/starting-footprint checks: PASS
+Visual engine check: flag and 5.5-cell circle centered in settlement, connecting roads and lanes visible.
+
+Lua debug: VILLAGES PASS worker excluded; neutral pays nothing
+Lua debug: VILLAGES PASS 8s infantry capture; owner changed without bonus
+Lua debug: VILLAGES PASS exact $25 income after 10s
+Lua debug: VILLAGES PASS contest blocks capture and income
+Lua debug: VILLAGES PASS enemy recapture transfers ownership
+Lua debug: VILLAGES PASS income paid only to new owner
+Lua debug: VILLAGES PASS persistent ownership; independent second village; cavalry capture
+Lua debug: VILLAGES PASS CAPTURE/INCOME COMPLETE
+Lua debug: VILLAGE AI Multi1 raid Eastmere troops=3
+Lua debug: VILLAGES PASS bot sends a raid group and reserves half the army
+Lua debug: VILLAGES PASS E2E COMPLETE
+
+Lua debug: VILLAGE AI Multi1 capture Eastmere troops=2
+Lua debug: VILLAGE AI TEST PASS nearest neutral capture dispatched=2 reserve=4
+Lua debug: VILLAGE AI Multi1 defend Westmere troops=3
+Lua debug: VILLAGE AI TEST PASS defense takes priority over enemy raid dispatched=3 reserve=3
+Lua debug: VILLAGE AI Multi1 raid Eastmere troops=3
+Lua debug: VILLAGE AI TEST PASS group raid with reserve dispatched=3 reserve=3
+Lua debug: VILLAGE AI TEST E2E COMPLETE

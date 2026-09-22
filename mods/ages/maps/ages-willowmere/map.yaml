@@ -65,9 +65,6 @@ Actors:
 	Willow8: t08
 		Owner: Neutral
 		Location: 63,23
-	Willow9: t13
-		Owner: Neutral
-		Location: 13,36
 	Willow10: t05
 		Owner: Neutral
 		Location: 9,38
@@ -83,9 +80,6 @@ Actors:
 	Willow14: t17
 		Owner: Neutral
 		Location: 65,24
-	Willow15: t01
-		Owner: Neutral
-		Location: 60,27
 	Willow16: t17
 		Owner: Neutral
 		Location: 54,12
@@ -104,9 +98,6 @@ Actors:
 	Willow21: t13
 		Owner: Neutral
 		Location: 42,24
-	Willow22: t07
-		Owner: Neutral
-		Location: 13,35
 	Willow23: t03
 		Owner: Neutral
 		Location: 2,38
@@ -122,9 +113,6 @@ Actors:
 	Willow27: t02
 		Owner: Neutral
 		Location: 3,37
-	Willow28: t13
-		Owner: Neutral
-		Location: 60,28
 	Willow29: t07
 		Owner: Neutral
 		Location: 10,41
@@ -152,30 +140,6 @@ Actors:
 	Willow37: mine
 		Owner: Neutral
 		Location: 65,31
-	Willow38: v03
-		Owner: Neutral
-		Location: 15,29
-	Willow39: v05
-		Owner: Neutral
-		Location: 11,27
-	Willow40: v07
-		Owner: Neutral
-		Location: 18,32
-	Willow41: wood
-		Owner: Neutral
-		Location: 12,36
-	Willow42: v03
-		Owner: Neutral
-		Location: 56,34
-	Willow43: v05
-		Owner: Neutral
-		Location: 52,32
-	Willow44: v07
-		Owner: Neutral
-		Location: 59,37
-	Willow45: wood
-		Owner: Neutral
-		Location: 59,41
 	Willow46: v01
 		Owner: Neutral
 		Location: 33,24
@@ -398,9 +362,6 @@ Actors:
 	Willow119: t10
 		Owner: Neutral
 		Location: 6,27
-	Willow120: t02
-		Owner: Neutral
-		Location: 8,27
 	Willow121: t03
 		Owner: Neutral
 		Location: 2,28
@@ -416,9 +377,6 @@ Actors:
 	Willow125: t02
 		Owner: Neutral
 		Location: 68,38
-	Willow126: t03
-		Owner: Neutral
-		Location: 64,39
 	Willow127: t01
 		Owner: Neutral
 		Location: 62,50
@@ -605,5 +563,61 @@ Actors:
 	Willow188: t11
 		Owner: Neutral
 		Location: 12,62
+	WestHouse0: v03
+		Owner: Neutral
+		Location: 11,29
+	EastHouse0: v03
+		Owner: Neutral
+		Location: 61,35
+	WestHouse1: v02
+		Owner: Neutral
+		Location: 10,27
+	EastHouse1: v02
+		Owner: Neutral
+		Location: 62,37
+	WestHouse2: v05
+		Owner: Neutral
+		Location: 17,27
+	EastHouse2: v05
+		Owner: Neutral
+		Location: 55,38
+	WestHouse3: v07
+		Owner: Neutral
+		Location: 9,30
+	EastHouse3: v07
+		Owner: Neutral
+		Location: 63,35
+	WestHouse4: v08
+		Owner: Neutral
+		Location: 17,31
+	EastHouse4: v08
+		Owner: Neutral
+		Location: 56,34
+	WestHouse5: v05
+		Owner: Neutral
+		Location: 13,24
+	EastHouse5: v05
+		Owner: Neutral
+		Location: 59,41
+	WestHouse6: v02
+		Owner: Neutral
+		Location: 17,24
+	EastHouse6: v02
+		Owner: Neutral
+		Location: 55,40
+	WestHouse7: v11
+		Owner: Neutral
+		Location: 10,24
+	EastHouse7: v11
+		Owner: Neutral
+		Location: 63,41
+	WestVillage: village.center
+		Owner: Neutral
+		Location: 14,28
+	EastVillage: village.center
+		Owner: Neutral
+		Location: 59,37
 
 Rules: rules.yaml
+
+FluentMessages: map.ftl
