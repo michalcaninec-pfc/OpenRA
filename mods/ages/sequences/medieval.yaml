@@ -1,0 +1,213 @@
+archer:
+	Defaults:
+		Filename: archer.png
+	stand:
+		Frames: 0, 1, 2, 3, 4, 5, 6, 7
+		Length: 1
+		Facings: 8
+		Tick: 160
+	idle:
+		Frames: 0, 1, 2, 3, 4, 5, 6, 7
+		Length: 1
+		Facings: 8
+		Tick: 160
+	run:
+		Frames: 0, 8, 1, 9, 2, 10, 3, 11, 4, 12, 5, 13, 6, 14, 7, 15
+		Length: 2
+		Facings: 8
+		Tick: 160
+	attack:
+		Frames: 8, 0, 9, 1, 10, 2, 11, 3, 12, 4, 13, 5, 14, 6, 15, 7
+		Length: 2
+		Facings: 8
+		Tick: 160
+	harvest:
+		Frames: 8, 0, 9, 1, 10, 2, 11, 3, 12, 4, 13, 5, 14, 6, 15, 7
+		Length: 2
+		Facings: 8
+		Tick: 160
+	die1:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die2:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die3:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die4:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die5:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die6:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die-crushed:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	icon:
+		Filename: archer-icon.png
+		Offset: 0,0
+worker:
+	Defaults:
+		Filename: worker.png
+	stand:
+		Frames: 0, 1, 2, 3, 4, 5, 6, 7
+		Length: 1
+		Facings: 8
+		Tick: 160
+	idle:
+		Frames: 0, 1, 2, 3, 4, 5, 6, 7
+		Length: 1
+		Facings: 8
+		Tick: 160
+	run:
+		Frames: 0, 8, 1, 9, 2, 10, 3, 11, 4, 12, 5, 13, 6, 14, 7, 15
+		Length: 2
+		Facings: 8
+		Tick: 160
+	attack:
+		Frames: 8, 0, 9, 1, 10, 2, 11, 3, 12, 4, 13, 5, 14, 6, 15, 7
+		Length: 2
+		Facings: 8
+		Tick: 160
+	harvest:
+		Frames: 8, 0, 9, 1, 10, 2, 11, 3, 12, 4, 13, 5, 14, 6, 15, 7
+		Length: 2
+		Facings: 8
+		Tick: 160
+	die1:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die2:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die3:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die4:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die5:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die6:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die-crushed:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	icon:
+		Filename: worker-icon.png
+		Offset: 0,0
+rider:
+	Defaults:
+		Filename: rider.png
+	stand:
+		Frames: 0, 1, 2, 3, 4, 5, 6, 7
+		Length: 1
+		Facings: 8
+		Tick: 160
+	idle:
+		Frames: 0, 1, 2, 3, 4, 5, 6, 7
+		Length: 1
+		Facings: 8
+		Tick: 160
+	run:
+		Frames: 0, 8, 1, 9, 2, 10, 3, 11, 4, 12, 5, 13, 6, 14, 7, 15
+		Length: 2
+		Facings: 8
+		Tick: 160
+	attack:
+		Frames: 8, 0, 9, 1, 10, 2, 11, 3, 12, 4, 13, 5, 14, 6, 15, 7
+		Length: 2
+		Facings: 8
+		Tick: 160
+	harvest:
+		Frames: 8, 0, 9, 1, 10, 2, 11, 3, 12, 4, 13, 5, 14, 6, 15, 7
+		Length: 2
+		Facings: 8
+		Tick: 160
+	die1:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die2:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die3:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die4:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die5:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die6:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	die-crushed:
+		Filename: pikeman.png
+		Start: 52
+		Scale: 0.7
+	icon:
+		Filename: rider-icon.png
+		Offset: 0,0
+mbarracks:
+	Defaults:
+		Filename: mbarracks.png
+	idle:
+		Length: 1
+	damaged-idle:
+		Length: 1
+	make:
+		Length: 1
+	dead:
+		Length: 1
+	build:
+		Length: 1
+	damaged-build:
+		Length: 1
+	icon:
+		Filename: mbarracks-icon.png
+		Offset: 0,0
+mhut:
+	Defaults:
+		Filename: mhut.png
+	idle:
+		Length: 1
+	damaged-idle:
+		Length: 1
+	make:
+		Length: 1
+	dead:
+		Length: 1
+	build:
+		Length: 1
+	damaged-build:
+		Length: 1
+	icon:
+		Filename: mhut-icon.png
+		Offset: 0,0

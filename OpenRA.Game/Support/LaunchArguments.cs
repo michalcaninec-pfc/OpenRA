@@ -31,6 +31,9 @@ namespace OpenRA
 		[Desc("Automatically start playing the given map.")]
 		public string Map;
 
+		[Desc("Fill the second playable slot with this bot type when using Launch.Map.")]
+		public string Bot;
+
 		public LaunchArguments(Arguments args)
 		{
 			if (args == null)

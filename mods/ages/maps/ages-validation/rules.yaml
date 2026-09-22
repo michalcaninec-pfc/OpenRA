@@ -1,0 +1,25 @@
+World:
+	LuaScript:
+		Scripts: test.lua
+	MapOptions:
+		ShortGameCheckboxEnabled: False
+		GameSpeed: fastest
+		GameSpeedDropdownLocked: True
+
+Player:
+	Shroud:
+		FogCheckboxEnabled: False
+		ExploredMapCheckboxEnabled: True
+
+AGE.TARGET:
+	Inherits: E1
+	-Buildable:
+	-AttackMove:
+	-AttackFrontal:
+	-Armament@PRIMARY:
+	-Armament@GARRISONED:
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	RenderSprites:
+		Image: e1

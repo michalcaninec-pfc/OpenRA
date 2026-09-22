@@ -1,0 +1,138 @@
+Player:
+	ModularBot@ages:
+		Name: ages-bot
+		Type: ages
+	GrantConditionOnBotOwner@ages:
+		Condition: enable-ages-ai
+		Bots: ages
+	ResourceMapBotModule:
+		RequiresCondition: enable-ages-ai
+		ResourceCreatorTypes: mine, gmine
+		ValuableResourceTypes: Ore, Gems
+		HarvesterTypes: worker, harv
+		RefineryTypes: mhut,mhut.start, proc
+		EnemyBaseBuildingTypes: mhut,mhut.start,mbarracks,fact,proc,barr,tent,weap
+	HarvesterBotModule:
+		RequiresCondition: enable-ages-ai
+		HarvesterTypes: worker, harv
+		RefineryTypes: mhut,mhut.start, proc
+		InitialHarvesters: 6
+	UnitBuilderBotModule@medieval:
+		RequiresCondition: enable-ages-ai && !modern-age
+		UnitQueues: Infantry
+		ProductionMinCashRequirement: 50
+		UnitsToBuild:
+			worker: 20
+			pikeman: 45
+			archer: 35
+			rider: 20
+		UnitLimits:
+			worker: 6
+			pikeman: 12
+			archer: 10
+			rider: 5
+	UnitBuilderBotModule@advance:
+		RequiresCondition: enable-ages-ai && !modern-age
+		UnitQueues: Infantry
+		ProductionMinCashRequirement: 3200
+		UnitsToBuild:
+			modern.age: 1
+		UnitLimits:
+			modern.age: 1
+		UnitDelays:
+			modern.age: 2500
+	BaseBuilderBotModule@rush:
+		RequiresCondition: enable-ages-ai && modern-age
+		MinimumExcessPower: 0
+		MaximumExcessPower: 160
+		ExcessPowerIncrement: 40
+		ExcessPowerIncreaseThreshold: 4
+		ConstructionYardTypes: mhut,mhut.start, fact
+		RefineryTypes: proc
+		PowerTypes: powr,apwr
+		ExpansionTolerate: 0
+		ForceExpansionTolerate: 0
+		TechTypes: mslo, dome, atek, stek, fix
+		InititalMinimumRefineryCount: 0
+		AdditionalMinimumRefineryCount: 2
+		ProductionTypes: barr,tent,weap
+		NewProductionCashThreshold: 7000
+		SiloTypes: silo
+		DefenseTypes: hbox,pbox,gun,ftur,tsla,agun,sam
+		BuildingLimits:
+			barr: 7
+			tent: 7
+			kenn: 1
+			dome: 1
+			weap: 4
+			atek: 1
+			stek: 1
+			fix: 1
+		BuildingFractions:
+			powr: 1
+			proc: 1
+			barr: 3
+			kenn: 1
+			tent: 3
+			weap: 4
+			pbox: 3
+			gun: 3
+			tsla: 3
+			gap: 1
+			ftur: 3
+			agun: 5
+			sam: 5
+			atek: 1
+			stek: 1
+			fix: 1
+			dome: 10
+			mslo: 1
+		BuildingDelays:
+			dome: 7000
+			fix: 3000
+			pbox: 2000
+			gun: 3000
+			ftur: 2000
+			tsla: 3000
+			kenn: 9000
+			atek: 11000
+			stek: 11000
+	SquadManagerBotModule@rush:
+		RequiresCondition: enable-ages-ai
+		SquadSize: 8
+		NavalUnitsTypes: ss, msub, dd, ca, lst, pt
+		ExcludeFromSquadsTypes: worker, modern.age, harv, mcv, dog, badr.bomber, u2
+		ConstructionYardTypes: mhut,mhut.start, fact
+		AirUnitsTypes: mig, yak, heli, hind, mh60
+		AircraftTargetType: AirborneActor
+		ProtectionTypes: mhut,mhut.start, mbarracks, worker, harv, mcv, mslo, gap, spen, syrd, iron, pdox, tsla, agun, dome, pbox, hbox, gun, ftur, sam, atek, weap, fact, proc, silo, hpad, afld, afld.ukraine, powr, apwr, stek, barr, kenn, tent, fix, fpwr, tenf, syrf, spef, weaf, domf, fixf, fapw, atef, pdof, mslf, facf
+		IgnoredEnemyTargetTypes: AirborneActor
+	UnitBuilderBotModule@rush:
+		RequiresCondition: enable-ages-ai && modern-age
+		UnitsToBuild:
+			e1: 65
+			e2: 15
+			e3: 30
+			e4: 15
+			e7: 1
+			dog: 15
+			shok: 15
+			harv: 10
+			apc: 30
+			jeep: 20
+			arty: 15
+			v2rl: 40
+			ftrk: 30
+			1tnk: 50
+			2tnk: 50
+			3tnk: 50
+			4tnk: 25
+			ttnk: 25
+			stnk: 5
+		UnitLimits:
+			dog: 4
+			harv: 8
+			jeep: 4
+			ftrk: 4
+	BuildingRepairBotModule:
+		RequiresCondition: enable-ages-ai

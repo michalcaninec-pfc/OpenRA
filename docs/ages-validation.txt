@@ -1,0 +1,51 @@
+OpenRA Ages validation - 2026-09-22, macOS arm64
+
+Build: 0 warnings, 0 errors.
+Engine tests: 508 passed, 2 existing skips, 0 failures.
+Mod lint: all four tilesets and all three maps passed with no warnings/errors.
+Command: ./launch-ages.sh Launch.Map=ages-validation Launch.Bot=ages
+Both players start with $500; no scripted resource or age grants.
+Human fixture buildings are repaired each tick so the AI transition can be observed.
+
+AGES TEST: PASS: medieval start and modern age locked.
+AGES COMBAT: archer damage=1200 distance=4096
+AGES COMBAT: rider damage=4500 distance=1024
+AGES TEST: PASS: pikeman cannot damage airborne targets.
+AGES COMBAT: rider damage=4500 distance=1024
+AGES COMBAT: pikeman damage=2500 distance=1024
+AGES COMBAT: archer damage=1200 distance=4096
+AGES TEST: PASS: trained Pikeman, Archer, Rider and Gatherer via normal production.
+AGES COMBAT: pikeman damage=2500 distance=1024
+AGES COMBAT: archer damage=1200 distance=4096
+AGES COMBAT: archer damage=1200 distance=4096
+AGES STATE: tick=250 human=315+0 AI=265+0 worker=4 pikeman=1 archer=1 rider=2
+AGES COMBAT: archer damage=1200 distance=4096
+AGES STATE: tick=500 human=315+0 AI=0+0 worker=6 pikeman=4 archer=1 rider=2
+AGES TEST: PASS: pikeman combat range and damage.
+AGES TEST: PASS: archer combat range and damage.
+AGES TEST: PASS: rider combat range and damage.
+AGES STATE: tick=750 human=315+0 AI=0+0 worker=6 pikeman=4 archer=2 rider=2
+AGES STATE: tick=1000 human=315+0 AI=0+491 worker=6 pikeman=4 archer=2 rider=2
+AGES STATE: tick=1250 human=315+2000 AI=0+1830 worker=6 pikeman=5 archer=6 rider=4
+AGES TEST: PASS: Gatherers deposited harvested ore at the Gathering Hut.
+AGES STATE: tick=1500 human=315+2000 AI=0+2210 worker=6 pikeman=9 archer=8 rider=5
+AGES STATE: tick=1750 human=315+2000 AI=0+2650 worker=6 pikeman=12 archer=10 rider=5
+AGES STATE: tick=2000 human=315+2000 AI=0+2650 worker=6 pikeman=12 archer=10 rider=5
+AGES STATE: tick=2250 human=315+3500 AI=0+3650 worker=6 pikeman=12 archer=10 rider=5
+AGES TEST: Researching modern age from naturally harvested income.
+AGES TEST: PASS: AI attacks the enemy base.
+AGES STATE: tick=2500 human=315+3004 AI=0+4650 worker=6 pikeman=12 archer=10 rider=5
+AGES STATE: tick=2750 human=315+2004 AI=0+4774 worker=6 pikeman=11 archer=10 rider=5
+AGES STATE: tick=3000 human=315+1000 AI=0+3774 worker=6 pikeman=11 archer=10 rider=5
+AGES STATE: tick=3250 human=315+2100 AI=0+2999 worker=6 pikeman=11 archer=10 rider=5
+AGES TEST: PASS: paid age upgrade completed, modern prerequisite granted.
+AGES TEST: PASS: modern soldier trained after age upgrade.
+AGES STATE: tick=3500 human=315+2900 AI=0+3050 worker=6 pikeman=11 archer=10 rider=5 modern.age=1
+AGES TEST: PASS: AI bought the modern age using its own economy.
+AGES STATE: tick=3750 human=315+2900 AI=0+3926 worker=6 pikeman=11 archer=10 rider=5 modern.age=1 powr=1 e1=2
+AGES STATE: tick=4000 human=315+2900 AI=0+3681 worker=6 pikeman=11 archer=10 rider=5 modern.age=1 powr=1 e1=3
+AGES STATE: tick=4250 human=315+2900 AI=0+2960 worker=6 pikeman=11 archer=10 rider=5 modern.age=1 powr=1 e1=5
+AGES STATE: tick=4500 human=315+4400 AI=0+2951 worker=6 pikeman=11 archer=10 rider=5 modern.age=1 powr=1 proc=1 e1=6
+AGES STATE: tick=4750 human=315+4900 AI=0+3061 worker=6 pikeman=11 archer=10 rider=5 modern.age=1 powr=1 proc=1 e1=7
+AGES STATE: tick=5000 human=315+4900 AI=0+3558 worker=6 pikeman=11 archer=10 rider=5 modern.age=1 powr=1 proc=1 tent=1 e1=9
+AGES TEST: PASS: E2E COMPLETE - both economies, medieval production, paid age upgrades, AI modern buildings and soldiers.

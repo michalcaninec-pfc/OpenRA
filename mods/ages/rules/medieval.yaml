@@ -1,0 +1,237 @@
+# Medieval melee prototype, available from either faction's barracks.
+PIKEMAN:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 15
+		Prerequisites: mbarracks
+		Description: actor-pikeman.description
+	Valued:
+		Cost: 10
+	Tooltip:
+		Name: actor-pikeman.name
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 8000
+	Mobile:
+		Speed: 62
+	Armament:
+		Weapon: PikeThrust
+	WithInfantryBody:
+		StandSequences: stand
+		IdleSequences: idle
+		DefaultAttackSequence: stab
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: stand
+		RequiresCondition: parachute
+	AutoTarget:
+		ScanRadius: 5
+	-TakeCover:
+
+ARCHER:
+	Inherits: PIKEMAN
+	Buildable:
+		BuildPaletteOrder: 20
+		Description: ages-archer-desc
+	Tooltip:
+		Name: ages-archer
+	Valued:
+		Cost: 15
+	Health:
+		HP: 4500
+	Armament:
+		Weapon: MedievalArrow
+	WithInfantryBody:
+		DefaultAttackSequence: attack
+
+RIDER:
+	Inherits: PIKEMAN
+	Buildable:
+		BuildPaletteOrder: 30
+		Description: ages-rider-desc
+	Tooltip:
+		Name: ages-rider
+	Valued:
+		Cost: 50
+	Health:
+		HP: 18000
+	Mobile:
+		Speed: 120
+	Armament:
+		Weapon: CavalryLance
+	WithInfantryBody:
+		DefaultAttackSequence: attack
+	Selectable:
+		Bounds: 1024,1280,0,-256
+
+WORKER:
+	Inherits: ^Infantry
+	Inherits@selection: ^SelectableEconomicUnit
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Worker
+		BuildPaletteOrder: 1
+		Prerequisites: mhut
+		Description: ages-worker-desc
+	Tooltip:
+		Name: ages-worker
+	Valued:
+		Cost: 110
+	Health:
+		HP: 6000
+	Mobile:
+		Speed: 72
+	Harvester:
+		Resources: Ore,Gems
+		BaleLoadDelay: 40
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 24
+		SearchFromHarvesterRadius: 12
+		HarvestFacings: 8
+	StoresResources:
+		Capacity: 20
+		Resources: Ore,Gems
+	DockClientManager:
+	WithHarvestAnimation:
+	-WithInfantryBody:
+	WithFacingSpriteBody:
+		Sequence: stand
+	WithMoveAnimation:
+		MoveSequence: run
+	WithStoresResourcesPipsDecoration:
+		Position: BottomLeft
+		Margin: 4,3
+		RequiresSelection: true
+		PipCount: 5
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-red
+
+MODERN.AGE:
+	Interactable:
+	ScriptTriggers:
+	Tooltip:
+		Name: ages-upgrade
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Research
+		BuildPaletteOrder: 99
+		Prerequisites: mbarracks, mhut, ~!modern.age
+		BuildLimit: 1
+		BuildDuration: 750
+		BuildDurationModifier: 100
+		Description: ages-upgrade-desc
+	Valued:
+		Cost: 3000
+	RenderSprites:
+		Image: fact
+	ProvidesPrerequisite:
+		Prerequisite: modern.age
+
+MBARRACKS:
+	Inherits: TENT
+	Buildable:
+		Prerequisites: mhut
+		Description: ages-barracks-desc
+		BuildPaletteOrder: 1
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: ages-barracks
+	RenderSprites:
+		Image: mbarracks
+	-WithBuildingBib:
+	Power:
+		Amount: 0
+	Production:
+		Produces: Infantry, Soldier, Research
+	ProvidesPrerequisite@medieval:
+		Prerequisite: mbarracks
+	SpawnActorsOnSell:
+		ActorTypes: worker
+		GuaranteedActorTypes: worker
+
+MHUT:
+	Inherits: FACT
+	Buildable:
+		Prerequisites: mhut
+		Description: ages-hut-desc
+		BuildPaletteOrder: 2
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: ages-hut
+	Health:
+		HP: 60000
+	RenderSprites:
+		Image: mhut
+	-WithBuildingBib:
+	Power:
+		Amount: 100
+	Production:
+		Produces: Building, Defense, Infantry, Worker
+	Exit@WORKER:
+		ExitCell: 1,3
+		SpawnOffset: 0,1024,0
+		ProductionTypes: Worker
+	RallyPoint:
+	Refinery:
+	DockHost:
+		Type: Unload
+		DockOffset: 0,2c0,0
+	StoresPlayerResources:
+		Capacity: 5000
+	ProvidesPrerequisite@hut:
+		Prerequisite: mhut
+	SpawnActorsOnSell:
+		ActorTypes: worker
+		GuaranteedActorTypes: worker
+	-Transforms:
+	-TransformsIntoMobile:
+	-TransformsIntoPassenger:
+	-TransformsIntoRepairable:
+	-TransformsIntoTransforms:
+	-GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+	-ConyardChronoReturn:
+	ExternalCondition@CHRONO:
+		Condition: chrono-vortex
+	-TransferTimedExternalConditionOnTransform:
+
+MHUT.START:
+	Inherits: MHUT
+	-Buildable:
+	FreeActor@STARTBARRACKS:
+		Actor: mbarracks
+		SpawnOffset: -4,0
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: mhut
+
+World:
+	-StartingUnits@mcvonly:
+	-StartingUnits@lightallies:
+	-StartingUnits@lightsoviet:
+	-StartingUnits@heavyallies:
+	-StartingUnits@heavysoviet:
+	StartingUnits@ages:
+		Class: ages
+		ClassName: ages-starting-army
+		Factions: allies, england, france, germany, soviet, russia, ukraine
+		BaseActor: mhut.start
+		SupportActors: worker,worker,worker
+		InnerSupportRadius: 4
+		OuterSupportRadius: 7
+	SpawnStartingUnits:
+		StartingUnitsClass: ages
+		DropdownLocked: true
+
+Player:
+	PlayerResources:
+		DefaultCash: 500
+		SelectableCash: 500,1000,3000,5000
+	GrantConditionOnPrerequisite@AGE:
+		Condition: modern-age
+		Prerequisites: modern.age

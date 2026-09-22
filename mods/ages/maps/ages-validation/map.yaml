@@ -1,0 +1,54 @@
+MapFormat: 12
+RequiresMod: ages
+Title: Ages - Validation
+Author: OpenRA Ages prototype
+Tileset: TEMPERAT
+MapSize: 98,66
+Bounds: 1,1,96,64
+Visibility: MissionSelector
+Categories: Conquest
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: england
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: russia
+		Enemies: Multi0, Multi1
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: england
+		Enemies: Creeps, Multi1
+		Spawn: 1
+	PlayerReference@Multi1:
+		Name: Multi1
+		Bot: ages
+		Playable: True
+		Faction: russia
+		Enemies: Creeps, Multi0
+		Spawn: 2
+Actors:
+	Spawn1: mpspawn
+		Owner: Neutral
+		Location: 15,32
+	Spawn2: mpspawn
+		Owner: Neutral
+		Location: 81,32
+	Mine0: mine
+		Owner: Neutral
+		Location: 15,44
+	Mine1: mine
+		Owner: Neutral
+		Location: 81,44
+	Mine2: mine
+		Owner: Neutral
+		Location: 48,16
+	Mine3: mine
+		Owner: Neutral
+		Location: 48,50
+
+Rules: rules.yaml

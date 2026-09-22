@@ -25,7 +25,7 @@ meta.add_text('Offset','0,-16')
 sheet.save('mods/ra/bits/pikeman.png', pnginfo=meta)
 frames[4].save('mods/ra/bits/pikeman-icon.png')
 # Facing-major sequence frame indices, as required by OpenRA.
-s='pikeman:\n\tDefaults:\n\t\tFilename: pikeman.png\n'
+s='pikeman:\n\tDefaults:\n\t\tFilename: pikeman.png\n\t\tScale: 0.7\n'
 def seq(name, rows, facings=True, tick=100):
     global s
     ids=[r*8+f for f in range(8) for r in rows] if facings else [rows[0]*8+4]
@@ -36,6 +36,6 @@ seq('stand',[0]);seq('idle',[0]);seq('run',[1,2,3,2],tick=100)
 seq('stab',[5,4,0],tick=100)
 for name in ['die1','die2','die3','die4','die5','die6','die-crushed']:
     seq(name,[6],facings=False,tick=1000)
-s+='\ticon:\n\t\tFilename: pikeman-icon.png\n\t\tOffset: 0,0\n'
+s+='\ticon:\n\t\tFilename: pikeman-icon.png\n\t\tScale: 1\n\t\tOffset: 0,0\n'
 Path('mods/ra/sequences/pikeman.yaml').write_text(s)
 print('Prepared 56 frames, 8 facings, idle/walk/thrust/death and build icon.')

@@ -1,6 +1,7 @@
 pikeman:
 	Defaults:
 		Filename: pikeman.png
+		Scale: 0.7
 	stand:
 		Frames: 0, 1, 2, 3, 4, 5, 6, 7
 		Length: 1
@@ -51,4 +52,5 @@ pikeman:
 		Tick: 1000
 	icon:
 		Filename: pikeman-icon.png
+		Scale: 1
 		Offset: 0,0

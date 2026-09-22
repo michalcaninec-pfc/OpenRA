@@ -32,7 +32,9 @@ Local .NET SDK and NuGet cache live in `../.openra-tools/`; game data and saves 
 
 `PikeThrust` uses the engine's invisible `InstantHit` with `TargetDamage`: one targeted ground actor is damaged, with no flying projectile or splash. Range `1c256` is 1.25 cells (1024 world units = one cell). Damage is 2500 internal health units, reload 25 ticks (one second at normal speed). Health is 8000, cost 120, speed 62. Armor reduces damage to vehicles and buildings; airborne actors are excluded. These are prototype balance values.
 
-OpenRA traditionally uses indexed SHP assets. This prototype enables the existing `PngSheet` loader instead. PNG metadata declares `FrameSize`, `FrameAmount` and ground-anchor `Offset`. YAML `Frames` reorders the source's row-major layout into direction-major animation frames. `Facings: 8` selects direction, `Length` selects frames per direction, and `Tick` is the animation frame duration in milliseconds.
+OpenRA traditionally uses indexed SHP assets. This prototype enables the existing `PngSheet` loader instead. PNG metadata declares `FrameSize`, `FrameAmount` and ground-anchor `Offset`. World sequences use `Scale: 0.7` to bring the body closer to stock E1 infantry (17 visible pixels in the extracted standing frame); the long pike remains taller. The production icon explicitly retains `Scale: 1`. The original ground anchor scales together with the frame.
+
+YAML `Frames` reorders the source's row-major layout into direction-major animation frames. `Facings: 8` selects direction, `Length` selects frames per direction, and `Tick` is the animation frame duration in milliseconds.
 
 ## Art
 

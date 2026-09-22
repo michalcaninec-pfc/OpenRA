@@ -1,0 +1,27 @@
+MedievalArrow:
+	ReloadDelay: 40
+	Range: 4c0
+	ValidTargets: GroundActor
+	InvalidTargets: AirborneActor
+	Projectile: Bullet
+		Speed: 300
+		Image: 50cal
+		LaunchAngle: 80
+	Warhead@Damage: SpreadDamage
+		Spread: 64
+		Damage: 1200
+		ValidTargets: GroundActor
+		InvalidTargets: AirborneActor
+		Versus:
+			None: 100
+			Wood: 20
+			Light: 15
+			Heavy: 5
+			Concrete: 5
+		DamageTypes: DefaultDeath
+
+CavalryLance:
+	Inherits: PikeThrust
+	ReloadDelay: 30
+	Warhead@1Dam: TargetDamage
+		Damage: 4500

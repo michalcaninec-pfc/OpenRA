@@ -999,7 +999,7 @@ namespace OpenRA
 			benchmark = new Benchmark(prefix);
 		}
 
-		public static void LoadMap(string launchMap)
+		public static void LoadMap(string launchMap, string launchBot = null)
 		{
 			var orders = new List<Order>
 			{
@@ -1010,6 +1010,16 @@ namespace OpenRA
 			var map = ModData.MapCache.SingleOrDefault(m => m.Uid == launchMap || Path.GetFileName(m.Path) == launchMap);
 			if (map == null)
 				throw new ArgumentException($"Could not find map '{launchMap}'.");
+
+			if (!string.IsNullOrEmpty(launchBot))
+			{
+				var slot = map.Players.Players.Values.Where(p => p.Playable).Skip(1).FirstOrDefault(p => p.AllowBots);
+				if (slot == null)
+					throw new ArgumentException($"Map '{launchMap}' has no available bot slot.");
+
+				// The first client on a new local server is the human host (index 0).
+				orders.Insert(0, Order.Command($"slot_bot {slot.Name} 0 {launchBot}"));
+			}
 
 			CreateAndStartLocalServer(map.Uid, orders);
 		}
