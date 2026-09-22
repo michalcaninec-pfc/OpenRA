@@ -40,7 +40,7 @@ no power and fires arrows automatically.
 
 | Item | Cost | Behavior |
 | --- | ---: | --- |
-| Gatherer | Included with hub | 20-bale capacity; ore and gems; returns to Hub or Refinery |
+| Gatherer | Included with hub | 8-bale capacity; ore and gems; returns to Hub or Refinery |
 | Pikeman | 40 | 80 HP, 25 melee damage, 1.25-cell reach |
 | Archer | 60 | 45 HP, 12 base arrow damage, four-cell range |
 | Rider | 140 | 180 HP, 45 melee damage, speed 120 versus Pikeman 62 |
@@ -57,9 +57,10 @@ no power and fires arrows automatically.
 The starting treasury is $500. Costs now reflect progression: Pikeman $40 →
 Musketeer $120 → Rifle Infantry $200. Riders and artillery cost more because
 they fill specialized roles. These are initial balance values, not a claim of
-competitive balance. Gathering takes **40 ticks per
-bale versus the Harvester's 4**, with equal speed and capacity. Travel, queuing
-and unloading mean total income per minute is not exactly 1/10 in every layout.
+competitive balance. Gathering takes **160 ticks per bale versus the Harvester's 4**. Gatherers carry
+8 bales instead of 20: one ore delivery pays $200, and gems $400. Compared with
+the previous 40-tick Gatherer, raw mining throughput is reduced by 75%; smaller
+loads add more travel per resource. Actual income also depends on travel and docking.
 
 Ages AI builds two additional Gathering Hubs (nine Gatherers total) and trains all three medieval troops, forms attack squads,
 and saves for Gunpowder, builds musketeers and field cannons, then saves for Industry.

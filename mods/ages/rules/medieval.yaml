@@ -96,13 +96,13 @@ WORKER:
 		Speed: 72
 	Harvester:
 		Resources: Ore,Gems
-		BaleLoadDelay: 40
+		BaleLoadDelay: 160
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 24
 		SearchFromHarvesterRadius: 12
 		HarvestFacings: 8
 	StoresResources:
-		Capacity: 20
+		Capacity: 8
 		Resources: Ore,Gems
 	DockClientManager:
 	SoundOnHarvest:
