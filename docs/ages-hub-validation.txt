@@ -1,0 +1,19 @@
+Gathering Hub regression — 2026-09-22
+
+Launch.Map=ages-hub-validation Launch.Bot=ages
+Fixture: $1800 starting cash, fastest game speed; production, placement and AI unchanged.
+750 ticks = 30 seconds at normal speed. Hub cost $600.
+YAML/Fluent lint: passed without warnings.
+
+Lua debug: AGES HUB: PASS starting armies, price and duration
+Lua debug: AGES HUB: tick=250 hubs=0 workers=3 cash=1606
+Lua debug: AGES HUB: tick=500 hubs=0 workers=3 cash=1406
+Lua debug: AGES HUB: tick=750 hubs=0 workers=3 cash=1206
+Lua debug: AGES HUB: first paid hub placed at tick 800
+Lua debug: AGES HUB: tick=1000 hubs=1 workers=6 cash=852
+Lua debug: AGES HUB: tick=1250 hubs=1 workers=6 cash=770
+Lua debug: AGES HUB: tick=1500 hubs=1 workers=6 cash=770
+Lua debug: AGES HUB: tick=1750 hubs=2 workers=9 cash=770
+Lua debug: AGES HUB: tick=2000 hubs=2 workers=9 cash=770
+Lua debug: AGES HUB: tick=2250 hubs=2 workers=9 cash=770
+Lua debug: AGES HUB: PASS two paid hubs, exactly nine gatherers, harvesting income; tick=2425

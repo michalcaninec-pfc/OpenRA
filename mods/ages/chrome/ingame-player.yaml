@@ -504,27 +504,9 @@ Container@PLAYER_WIDGETS:
 									X: 6
 									Y: 4
 									ImageCollection: ages-production-icons
-						ProductionTypeButton@WORKER:
+						ProductionTypeButton@RESEARCH:
 							X: 116
 							Y: 0
-							Width: 111
-							Height: 24
-							Font: TinyBold
-							Align: Left
-							LeftMargin: 26
-							Text: ages-tab-worker
-							TooltipText: ages-tab-worker
-							TooltipContainer: TOOLTIP_CONTAINER
-							ProductionGroup: Worker
-							Key: AgesTabWorker
-							Children:
-								Image@ICON:
-									X: 6
-									Y: 4
-									ImageCollection: ages-production-icons
-						ProductionTypeButton@RESEARCH:
-							X: 0
-							Y: 27
 							Width: 111
 							Height: 24
 							Font: TinyBold
@@ -541,7 +523,7 @@ Container@PLAYER_WIDGETS:
 									Y: 4
 									ImageCollection: ages-production-icons
 						ProductionTypeButton@MEDIEVAL:
-							X: 116
+							X: 0
 							Y: 27
 							Width: 111
 							Height: 24
@@ -559,8 +541,8 @@ Container@PLAYER_WIDGETS:
 									Y: 4
 									ImageCollection: ages-production-icons
 						ProductionTypeButton@GUNPOWDER:
-							X: 0
-							Y: 54
+							X: 116
+							Y: 27
 							Width: 111
 							Height: 24
 							Font: TinyBold
@@ -577,7 +559,7 @@ Container@PLAYER_WIDGETS:
 									Y: 4
 									ImageCollection: ages-production-icons
 						ProductionTypeButton@INFANTRY:
-							X: 116
+							X: 0
 							Y: 54
 							Width: 111
 							Height: 24
@@ -595,8 +577,8 @@ Container@PLAYER_WIDGETS:
 									Y: 4
 									ImageCollection: ages-production-icons
 						ProductionTypeButton@VEHICLE:
-							X: 0
-							Y: 81
+							X: 116
+							Y: 54
 							Width: 111
 							Height: 24
 							Font: TinyBold
@@ -613,7 +595,7 @@ Container@PLAYER_WIDGETS:
 									Y: 4
 									ImageCollection: ages-production-icons
 						ProductionTypeButton@DEFENSE:
-							X: 116
+							X: 0
 							Y: 81
 							Width: 111
 							Height: 24
@@ -631,8 +613,8 @@ Container@PLAYER_WIDGETS:
 									Y: 4
 									ImageCollection: ages-production-icons
 						ProductionTypeButton@AIRCRAFT:
-							X: 0
-							Y: 108
+							X: 116
+							Y: 81
 							Width: 111
 							Height: 24
 							Font: TinyBold
@@ -649,7 +631,7 @@ Container@PLAYER_WIDGETS:
 									Y: 4
 									ImageCollection: ages-production-icons
 						ProductionTypeButton@SHIP:
-							X: 116
+							X: 0
 							Y: 108
 							Width: 111
 							Height: 24

@@ -1,0 +1,11 @@
+World:
+	LuaScript:
+		Scripts: test.lua
+	MapOptions:
+		ShortGameCheckboxEnabled: False
+		GameSpeed: fastest
+		GameSpeedDropdownLocked: True
+Player:
+	PlayerResources:
+		DefaultCash: 1800
+		SelectableCash: 1800

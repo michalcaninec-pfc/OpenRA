@@ -3,11 +3,6 @@ AgesTabBuilding: E
 	Types: Production
 	Contexts: player
 
-AgesTabWorker: I
-	Description: ages-tab-worker
-	Types: Production
-	Contexts: player
-
 AgesTabResearch: R
 	Description: ages-tab-research
 	Types: Production

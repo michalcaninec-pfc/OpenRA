@@ -1,21 +1,20 @@
 ages-title = Ages: Pike to Steel
 ages-windowtitle = OpenRA - Ages: Pike to Steel
 ages-worker = Gatherer
-ages-worker-desc = Gathers ore and gems. Ten times slower gathering than a Harvester.
-    Returns resources to the Gathering Hut.
 ages-archer = Archer
 ages-archer-desc = Cheap ranged infantry. Effective against unarmored troops.
 ages-rider = Rider
 ages-rider-desc = Fast mounted melee soldier. Effective at flanking archers.
 ages-barracks = Medieval Barracks
 ages-barracks-desc = Trains armies of each era. Research ages in the separate Research tab.
-ages-hut = Gathering Hut
-ages-hut-desc = Resource drop-off and Gatherer training. Builds your settlement.
+ages-hut = Gathering Hub
+ages-hut-desc = Resource drop-off. Includes three Gatherers when construction finishes.
+    Uses the building queue for 30 seconds at normal speed.
 ages-upgrade = Industrial Age
 ages-upgrade-desc = Requires the Gunpowder Age. Permanently unlocks modern production.
-    Build power, refineries and factories from the Gathering Hut.
+    Build power, refineries and factories from the Gathering Hub.
     Existing faction and technology requirements still apply.
-ages-starting-army = Barracks, Gathering Hut and three Gatherers
+ages-starting-army = Barracks, Gathering Hub and three Gatherers
 ages-bot = Ages AI
 
 ages-gunpowder-upgrade = Gunpowder Age
@@ -30,7 +29,6 @@ ages-era-gunpowder = II · GUNPOWDER
 ages-era-industrial = III · INDUSTRIAL
 ages-tab-building = Buildings
 ages-tab-defense = Defenses
-ages-tab-worker = Economy
 ages-tab-research = Research
 ages-tab-medieval = I · Medieval
 ages-tab-gunpowder = II · Gunpowder

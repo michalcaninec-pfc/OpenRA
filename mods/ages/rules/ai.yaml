@@ -14,9 +14,9 @@ Player:
 		EnemyBaseBuildingTypes: mhut,mhut.start,mbarracks,fact,proc,barr,tent,weap
 	HarvesterBotModule:
 		RequiresCondition: enable-ages-ai
-		HarvesterTypes: worker, harv
-		RefineryTypes: mhut,mhut.start, proc
-		InitialHarvesters: 6
+		HarvesterTypes: harv
+		RefineryTypes: proc
+		InitialHarvesters: 0
 	UnitBuilderBotModule@medieval:
 		RequiresCondition: enable-ages-ai && !gunpowder-age
 		UnitQueues: Medieval
@@ -29,14 +29,18 @@ Player:
 			pikeman: 8
 			archer: 6
 			rider: 3
-	UnitBuilderBotModule@economy:
+	BaseBuilderBotModule@economy:
 		RequiresCondition: enable-ages-ai && !modern-age
-		UnitQueues: Worker
-		ProductionMinCashRequirement: 80
-		UnitsToBuild:
-			worker: 100
-		UnitLimits:
-			worker: 6
+		ConstructionYardTypes: mhut, mhut.start
+		SellRefineryInterval: -1
+		RefineryTypes: mhut, mhut.start
+		InititalMinimumRefineryCount: 2
+		AdditionalMinimumRefineryCount: 0
+		ProductionMinCashRequirement: 600
+		BuildingFractions:
+			mhut: 100
+		BuildingLimits:
+			mhut: 2
 	UnitBuilderBotModule@gunpowder:
 		RequiresCondition: enable-ages-ai && gunpowder-age && !modern-age
 		UnitQueues: Gunpowder
@@ -74,6 +78,7 @@ Player:
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 4
 		ConstructionYardTypes: mhut,mhut.start, fact
+		SellRefineryInterval: -1
 		RefineryTypes: proc
 		PowerTypes: powr,apwr
 		ExpansionTolerate: 0
@@ -86,6 +91,7 @@ Player:
 		SiloTypes: silo
 		DefenseTypes: hbox,pbox,gun,ftur,tsla,agun,sam
 		BuildingLimits:
+			mhut: 2
 			barr: 7
 			tent: 7
 			kenn: 1
@@ -95,6 +101,7 @@ Player:
 			stek: 1
 			fix: 1
 		BuildingFractions:
+			mhut: 1
 			powr: 1
 			proc: 1
 			barr: 3

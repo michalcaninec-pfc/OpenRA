@@ -1,6 +1,6 @@
 # Ages: Pike to Steel
 
-A playable Red Alert-derived skirmish prototype: start with a Gathering Hut,
+A playable Red Alert-derived skirmish prototype: start with a Gathering Hub,
 Medieval Barracks and three Gatherers, build a medieval army, research Gunpowder for muskets and field artillery, then
 buy the Industrial Age to unlock the normal Red Alert technology tree.
 
@@ -17,16 +17,16 @@ From a terminal in the checkout:
 ./launch-ages.sh            # Main menu / normal skirmish lobby
 ```
 
-The sidebar separates Buildings, Economy, Research, Medieval, Gunpowder and
+The sidebar separates Buildings, Research, Medieval, Gunpowder and
 Industrial forces. Every production card displays a name and the actual price.
-Keyboard tabs: E Buildings, I Economy, R Research, T Medieval, Y Gunpowder,
+Keyboard tabs: E Buildings, R Research, T Medieval, Y Gunpowder,
 U Industrial Infantry; Ctrl+V/D/F/N selects vehicles/defenses/aircraft/ships.
 Research Gunpowder ($1800) before Industrial Age ($4500). Locked future unit
 cards stay hidden; medieval troops remain available as a cheap alternative.
-Select a Gatherer and right-click ore to gather; the Hut is the drop-off.
-Select the Building tab to build another Hut or Barracks. After the age upgrade,
+Select a Gatherer and right-click ore to gather; the Hub is the drop-off.
+Select the Building tab to build another Hub or Barracks. After the age upgrade,
 build a Power Plant, Ore Refinery and War Factory to reach modern vehicles.
-The Gathering Hut automatically fulfills Construction Yard requirements after
+The Gathering Hub automatically fulfills Construction Yard requirements after
 Industrial Age, including the starting hut. Its drop-off, storage, footprint and
 production stay intact. Modern faction, barracks, power and technology
 prerequisites still apply.
@@ -40,14 +40,14 @@ no power and fires arrows automatically.
 
 | Item | Cost | Behavior |
 | --- | ---: | --- |
-| Gatherer | 80 | 20-bale capacity; ore and gems; returns to Hut or Refinery |
+| Gatherer | Included with hub | 20-bale capacity; ore and gems; returns to Hub or Refinery |
 | Pikeman | 40 | 80 HP, 25 melee damage, 1.25-cell reach |
 | Archer | 60 | 45 HP, 12 base arrow damage, four-cell range |
 | Rider | 140 | 180 HP, 45 melee damage, speed 120 versus Pikeman 62 |
 | Watchtower | 250 | 250 HP, arrow fire at six cells, seven-cell vision, no power required |
 | Wooden Palisade | 20 | 150 HP per segment; connected wall placement |
 | Medieval Barracks | 200 | Trains the medieval army and researches the age |
-| Gathering Hut | 250 | Drop-off, storage, Gatherer training and building production |
+| Gathering Hub | 600 | 30 seconds in the shared building queue; spawns three Gatherers on completion |
 | Musketeer | 120 | 55 HP, 28 damage, five-cell range; slow 65-tick reload |
 | Field Cannon | 450 | 90 HP, splash damage, 2–9-cell range; slow and vulnerable up close |
 | Rifle Infantry | 200 | Industrial tier, rapid fire; stays more expensive than basic medieval troops |
@@ -61,7 +61,7 @@ competitive balance. Gathering takes **40 ticks per
 bale versus the Harvester's 4**, with equal speed and capacity. Travel, queuing
 and unloading mean total income per minute is not exactly 1/10 in every layout.
 
-Ages AI trains Gatherers and all three medieval troops, forms attack squads,
+Ages AI builds two additional Gathering Hubs (nine Gatherers total) and trains all three medieval troops, forms attack squads,
 and saves for Gunpowder, builds musketeers and field cannons, then saves for Industry.
 After advancing, it uses the stock RA base-building
 and modern army logic. It receives no extra money or scripted upgrade.
@@ -155,3 +155,12 @@ Final run passed at tick 1700. See `docs/ages-defense-validation.txt`.
 Camera controls: **W/A/S/D** pan up/left/down/right. The displaced commands
 are **K** (select units by type), **G** (attack-move), **V** (stop), and **J**
 (guard). These defaults apply only to Ages; unit stance shortcuts retain Alt.
+
+Economy expansion uses Gathering Hubs only: individual Gatherer training and its
+empty Economy tab are removed. The starting hub still has exactly three workers.
+New hubs cost $600 and take 750 ticks (30 seconds at normal game speed), then spawn
+three workers that automatically harvest. Building more hubs does not accelerate
+the shared building queue. Selling a hub does not spawn an extra worker.
+The AI pays for and places its hubs before Industry and can replace destroyed hubs;
+automatic refinery selling is disabled to avoid selling hubs and repeatedly spawning workers.
+Hub regression: `Launch.Map=ages-hub-validation Launch.Bot=ages`.
