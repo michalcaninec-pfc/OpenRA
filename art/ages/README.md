@@ -30,3 +30,22 @@ Known prototype limits: only two poses for each new unit/facing, several similar
 facings in the generated atlas, shared Pikeman death frame and static building
 construction/damage frames. A polished art pass would add genuine walk cycles,
 individual death/damage states and more consistent directional silhouettes.
+
+## Gunpowder and sound pass
+
+`gunpowder-source.png` is a generated 8-column × 4-row atlas using the existing
+Ages units as a visual reference: musketeer idle/fire, field cannon idle/fire.
+`prepare-gunpowder.py` slices, scales, anchors and indexes the atlas using the
+same RA palette conversion. Infantry remains near stock infantry scale.
+
+`synthesize-sounds.py` generates six deterministic mono 22.05 kHz WAV files:
+two pike/lance swishes with impact, two bow twangs and two mining taps. No external
+audio samples are embedded. Musket and cannon reports reference installed RA
+content instead of copying it. Mining uses positional attenuation and a per-unit
+cooldown. The voice acknowledgements are still the stock RA voices.
+
+`watchtower-source-v2.png` is the revised, broader timber watchtower, using the
+first watchtower and original buildings as references. `prepare-watchtower.py`
+packs it to 41×52 px (original was 34×64 px) with remappable
+blue cloth and a separate icon. It currently has static make/damage states.
+Palisades reuse the installed game's WOOD wall sprites and connection frames.

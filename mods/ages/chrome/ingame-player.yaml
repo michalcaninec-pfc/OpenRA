@@ -1,0 +1,644 @@
+Container@PLAYER_WIDGETS:
+	Logic: LoadIngameChatLogic
+	Children:
+		Container@CHAT_ROOT:
+		LogicKeyListener@PLAYER_KEYHANDLER:
+			Logic: RemoveFromControlGroupHotkeyLogic
+				RemoveFromControlGroupKey: RemoveFromControlGroup
+		ControlGroups@CONTROLGROUPS:
+			SelectGroupKeyPrefix: ControlGroupSelect
+			CreateGroupKeyPrefix: ControlGroupCreate
+			AddToGroupKeyPrefix: ControlGroupAddTo
+			CombineWithGroupKeyPrefix: ControlGroupCombineWith
+			JumpToGroupKeyPrefix: ControlGroupJumpTo
+		LogicTicker@SIDEBAR_TICKER:
+		Container@SUPPORT_POWERS:
+			Logic: SupportPowerBinLogic
+			X: 10
+			Y: 10
+			Children:
+				SupportPowers@SUPPORT_PALETTE:
+					IconSize: 62, 46
+					IconSpriteOffset: -1, -1
+					TooltipContainer: TOOLTIP_CONTAINER
+					ReadyText: supportpowers-support-powers-palette.ready
+					HoldText: supportpowers-support-powers-palette.hold
+					HotkeyPrefix: SupportPower
+					HotkeyCount: 6
+				Container@PALETTE_FOREGROUND:
+					Children:
+						Image@ICON_TEMPLATE:
+							Logic: AddFactionSuffixLogic
+							X: 0 - 2
+							Y: 0 - 2
+							Width: 62
+							Height: 46
+							IgnoreMouseOver: true
+							ImageCollection: sidebar
+							ImageName: background-supportoverlay
+		SupportPowerTimer@SUPPORT_POWER_TIMER:
+			X: 80
+			Y: 10
+			Order: Descending
+		Image@COMMAND_BAR_BACKGROUND:
+			X: 5
+			Y: WINDOW_HEIGHT - HEIGHT - 5
+			Width: 434
+			Height: 44
+			ImageCollection: commandbar
+			ImageName: background
+			ClickThrough: False
+		Container@COMMAND_BAR:
+			Logic: CommandBarLogic
+			X: 14
+			Y: WINDOW_HEIGHT - HEIGHT - 14
+			Width: 275
+			Height: 26
+			Children:
+				LogicKeyListener@MODIFIER_OVERRIDES:
+				Button@ATTACK_MOVE:
+					Logic: AddFactionSuffixLogic
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					Key: AttackMove
+					DisableKeySound: true
+					TooltipText: button-command-bar-attack-move.tooltip
+					TooltipDesc: button-command-bar-attack-move.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: command-icons
+							ImageName: attack-move
+				Button@FORCE_MOVE:
+					Logic: AddFactionSuffixLogic
+					X: 34
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					DisableKeySound: true
+					TooltipText: button-command-bar-force-move.tooltip
+					TooltipDesc: button-command-bar-force-move.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: command-icons
+							ImageName: force-move
+				Button@FORCE_ATTACK:
+					Logic: AddFactionSuffixLogic
+					X: 68
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					DisableKeySound: true
+					TooltipText: button-command-bar-force-attack.tooltip
+					TooltipDesc: button-command-bar-force-attack.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: command-icons
+							ImageName: force-attack
+				Button@GUARD:
+					Logic: AddFactionSuffixLogic
+					X: 102
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					Key: Guard
+					DisableKeySound: true
+					TooltipText: button-command-bar-guard.tooltip
+					TooltipDesc: button-command-bar-guard.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: command-icons
+							ImageName: guard
+				Button@DEPLOY:
+					Logic: AddFactionSuffixLogic
+					X: 136
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					Key: Deploy
+					DisableKeyRepeat: true
+					DisableKeySound: true
+					TooltipText: button-command-bar-deploy.tooltip
+					TooltipDesc: button-command-bar-deploy.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: command-icons
+							ImageName: deploy
+				Button@SCATTER:
+					Logic: AddFactionSuffixLogic
+					X: 170
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					Key: Scatter
+					DisableKeyRepeat: true
+					DisableKeySound: true
+					TooltipText: button-command-bar-scatter.tooltip
+					TooltipDesc: button-command-bar-scatter.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: command-icons
+							ImageName: scatter
+				Button@STOP:
+					Logic: AddFactionSuffixLogic
+					X: 204
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					Key: Stop
+					DisableKeyRepeat: true
+					DisableKeySound: true
+					TooltipText: button-command-bar-stop.tooltip
+					TooltipDesc: button-command-bar-stop.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: command-icons
+							ImageName: stop
+				Button@QUEUE_ORDERS:
+					Logic: AddFactionSuffixLogic
+					X: 238
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					DisableKeySound: true
+					TooltipText: button-command-bar-queue-orders.tooltip
+					TooltipDesc: button-command-bar-queue-orders.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: command-icons
+							ImageName: queue-orders
+		Container@STANCE_BAR:
+			Logic: StanceSelectorLogic
+			X: 294
+			Y: WINDOW_HEIGHT - HEIGHT - 14
+			Width: 138
+			Height: 26
+			Children:
+				Button@STANCE_ATTACKANYTHING:
+					Logic: AddFactionSuffixLogic
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					Key: StanceAttackAnything
+					DisableKeyRepeat: true
+					DisableKeySound: true
+					TooltipText: button-stance-bar-attackanything.tooltip
+					TooltipDesc: button-stance-bar-attackanything.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 9
+							Y: 5
+							ImageCollection: stance-icons
+							ImageName: attack-anything
+				Button@STANCE_DEFEND:
+					Logic: AddFactionSuffixLogic
+					X: 34
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					Key: StanceDefend
+					DisableKeyRepeat: true
+					DisableKeySound: true
+					TooltipText: button-stance-bar-defend.tooltip
+					TooltipDesc: button-stance-bar-defend.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 9
+							Y: 5
+							ImageCollection: stance-icons
+							ImageName: defend
+				Button@STANCE_RETURNFIRE:
+					Logic: AddFactionSuffixLogic
+					X: 68
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					Key: StanceReturnFire
+					DisableKeyRepeat: true
+					DisableKeySound: true
+					TooltipText: button-stance-bar-returnfire.tooltip
+					TooltipDesc: button-stance-bar-returnfire.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 9
+							Y: 5
+							ImageCollection: stance-icons
+							ImageName: return-fire
+				Button@STANCE_HOLDFIRE:
+					Logic: AddFactionSuffixLogic
+					X: 102
+					Width: 34
+					Height: 26
+					VisualHeight: 0
+					Background: command-button
+					Key: StanceHoldFire
+					DisableKeyRepeat: true
+					DisableKeySound: true
+					TooltipText: button-stance-bar-holdfire.tooltip
+					TooltipDesc: button-stance-bar-holdfire.tooltipdesc
+					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 9
+							Y: 5
+							ImageCollection: stance-icons
+							ImageName: hold-fire
+		Container@MUTE_INDICATOR:
+			Logic: MuteIndicatorLogic
+			X: WINDOW_WIDTH - WIDTH - 260
+			Y: 10
+			Width: 200
+			Height: 25
+			Children:
+				Image@ICON:
+					X: PARENT_WIDTH - WIDTH
+					Y: 1
+					Width: 24
+					Height: 24
+					ImageCollection: sidebar-bits
+					ImageName: indicator-muted
+				Label@LABEL:
+					Width: PARENT_WIDTH - 30
+					Height: 25
+					Align: Right
+					Text: label-mute-indicator
+					Contrast: true
+		Image@SIDEBAR_BACKGROUND_TOP:
+			Logic: AddFactionSuffixLogic
+			X: WINDOW_WIDTH - 250
+			Y: 10
+			Width: 238
+			Height: 262
+			ImageCollection: sidebar
+			ImageName: background-top
+			ClickThrough: false
+			Children:
+				Container@TOP_BUTTONS:
+					Logic: MenuButtonsChromeLogic
+					X: 9
+					Y: 7
+					Children:
+						Button@BEACON_BUTTON:
+							Logic: BeaconOrderButtonLogic, AddFactionSuffixLogic
+							Width: 28
+							Height: 28
+							Background: sidebar-button
+							Key: PlaceBeacon
+							TooltipText: button-top-buttons-beacon-tooltip
+							TooltipContainer: TOOLTIP_CONTAINER
+							VisualHeight: 0
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 6
+									ImageCollection: order-icons
+						Button@SELL_BUTTON:
+							Logic: SellOrderButtonLogic, AddFactionSuffixLogic
+							X: 32
+							Width: 28
+							Height: 28
+							Background: sidebar-button
+							Key: Sell
+							TooltipText: button-top-buttons-sell-tooltip
+							TooltipContainer: TOOLTIP_CONTAINER
+							VisualHeight: 0
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 6
+									ImageCollection: order-icons
+						Button@POWER_BUTTON:
+							Logic: PowerdownOrderButtonLogic, AddFactionSuffixLogic
+							X: 64
+							Width: 28
+							Height: 28
+							Background: sidebar-button
+							Key: PowerDown
+							TooltipText: button-top-buttons-power-tooltip
+							TooltipContainer: TOOLTIP_CONTAINER
+							VisualHeight: 0
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 6
+									ImageCollection: order-icons
+						Button@REPAIR_BUTTON:
+							Logic: RepairOrderButtonLogic, AddFactionSuffixLogic
+							X: 96
+							Width: 28
+							Height: 28
+							Background: sidebar-button
+							Key: Repair
+							TooltipText: button-top-buttons-repair-tooltip
+							TooltipContainer: TOOLTIP_CONTAINER
+							VisualHeight: 0
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 6
+									ImageCollection: order-icons
+						MenuButton@OPTIONS_BUTTON:
+							Logic: AddFactionSuffixLogic
+							X: 192
+							Width: 28
+							Height: 28
+							Background: sidebar-button
+							Key: escape
+							TooltipText: button-top-buttons-options-tooltip
+							TooltipContainer: TOOLTIP_CONTAINER
+							DisableWorldSounds: true
+							VisualHeight: 0
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 6
+									ImageCollection: order-icons
+									ImageName: options
+				Image@RADAR:
+					Logic: AddFactionSuffixLogic, IngameRadarDisplayLogic
+					X: 8
+					Y: 40
+					ImageCollection: sidebar
+					ImageName: radar
+					Children:
+						LogicTicker@RADAR_TICKER:
+						ColorBlock@RADAR_FADETOBLACK:
+							Width: 222
+							Height: 222
+						Radar@RADAR_MINIMAP:
+							WorldInteractionController: INTERACTION_CONTROLLER
+							X: 1
+							Y: 1
+							Width: 220
+							Height: 220
+							SoundUp: RadarUp
+							SoundDown: RadarDown
+							Children:
+						VideoPlayer@PLAYER:
+							X: 1
+							Y: 1
+							Width: 220
+							Height: 220
+							Skippable: false
+		Label@AGES_ERA:
+			Logic: AgesEraLogic
+			X: WINDOW_WIDTH - 248
+			Y: 301
+			Width: 234
+			Height: 25
+			Align: Center
+			Font: Bold
+			Contrast: true
+		Container@SIDEBAR_PRODUCTION:
+			Logic: ClassicProductionLogic
+			X: WINDOW_WIDTH - 250
+			Y: 330
+			Width: 238
+			Height: WINDOW_HEIGHT - 340
+			Children:
+				ColorBlock@AGES_PANEL:
+					Width: 238
+					Height: PARENT_HEIGHT
+					Color: 10171EEF
+				LogicTicker@PRODUCTION_TICKER:
+				ProductionPalette@PRODUCTION_PALETTE:
+					X: 5
+					Y: 144
+					Columns: 2
+					MinimumRows: 1
+					ShowNamesAndCosts: true
+					TooltipContainer: TOOLTIP_CONTAINER
+					ReadyText: productionpalette-sidebar-production-palette.ready
+					HoldText: productionpalette-sidebar-production-palette.hold
+					IconSize: 111,78
+					IconMargin: 5,5
+					IconSpriteOffset: 0,-15
+					HotkeyPrefix: Production
+					HotkeyCount: 24
+					SelectProductionBuildingHotkey: SelectProductionBuilding
+				Container@PRODUCTION_TYPES:
+					X: 5
+					Y: 5
+					Width: 228
+					Height: 134
+					Children:
+						ProductionTypeButton@BUILDING:
+							X: 0
+							Y: 0
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-building
+							TooltipText: ages-tab-building
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Building
+							Key: AgesTabBuilding
+						ProductionTypeButton@WORKER:
+							X: 116
+							Y: 0
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-worker
+							TooltipText: ages-tab-worker
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Worker
+							Key: AgesTabWorker
+						ProductionTypeButton@RESEARCH:
+							X: 0
+							Y: 27
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-research
+							TooltipText: ages-tab-research
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Research
+							Key: AgesTabResearch
+						ProductionTypeButton@MEDIEVAL:
+							X: 116
+							Y: 27
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-medieval
+							TooltipText: ages-tab-medieval
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Medieval
+							Key: AgesTabMedieval
+						ProductionTypeButton@GUNPOWDER:
+							X: 0
+							Y: 54
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-gunpowder
+							TooltipText: ages-tab-gunpowder
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Gunpowder
+							Key: AgesTabGunpowder
+						ProductionTypeButton@INFANTRY:
+							X: 116
+							Y: 54
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-infantry
+							TooltipText: ages-tab-infantry
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Infantry
+							Key: AgesTabInfantry
+						ProductionTypeButton@VEHICLE:
+							X: 0
+							Y: 81
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-vehicle
+							TooltipText: ages-tab-vehicle
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Vehicle
+							Key: AgesTabVehicle
+						ProductionTypeButton@DEFENSE:
+							X: 116
+							Y: 81
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-defense
+							TooltipText: ages-tab-defense
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Defense
+							Key: AgesTabDefense
+						ProductionTypeButton@AIRCRAFT:
+							X: 0
+							Y: 108
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-aircraft
+							TooltipText: ages-tab-aircraft
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Aircraft
+							Key: AgesTabAircraft
+						ProductionTypeButton@SHIP:
+							X: 116
+							Y: 108
+							Width: 111
+							Height: 24
+							Font: TinyBold
+							Text: ages-tab-ship
+							TooltipText: ages-tab-ship
+							TooltipContainer: TOOLTIP_CONTAINER
+							ProductionGroup: Ship
+							Key: AgesTabShip
+				Button@SCROLL_UP_BUTTON:
+					X: 5
+					Y: PARENT_HEIGHT - 24
+					Width: 111
+					Height: 22
+					Font: TinyBold
+					Text: ages-scroll-up
+				Button@SCROLL_DOWN_BUTTON:
+					X: 121
+					Y: PARENT_HEIGHT - 24
+					Width: 111
+					Height: 22
+					Font: TinyBold
+					Text: ages-scroll-down
+		Image@SIDEBAR_MONEYBIN:
+			Logic: AddFactionSuffixLogic
+			X: WINDOW_WIDTH - 250
+			Y: 272
+			Width: 238
+			Height: 28
+			ImageCollection: sidebar
+			ImageName: background-moneybin
+			ClickThrough: false
+			Children:
+				Label@GAME_TIMER:
+					Logic: GameTimerLogic
+					X: 3
+					Y: 3
+					Width: PARENT_WIDTH
+					Height: 23
+					Align: Center
+					Font: TinyBold
+				LabelWithTooltip@CASH:
+					Logic: IngameCashCounterLogic
+					X: 35
+					Y: 2
+					Width: 50
+					Height: 23
+					Font: Bold
+					TooltipContainer: TOOLTIP_CONTAINER
+					TooltipTemplate: SIMPLE_TOOLTIP
+					Children:
+						Image@CASH_ICON:
+							X: -21
+							Y: 4
+							ImageCollection: cash-icons
+							ImageName: cash-normal
+				LabelWithTooltip@POWER:
+					Logic: IngamePowerCounterLogic
+					X: PARENT_WIDTH - WIDTH - 30
+					Y: 2
+					Width: 50
+					Height: 23
+					Align: Right
+					Font: Bold
+					TooltipContainer: TOOLTIP_CONTAINER
+					TooltipTemplate: SIMPLE_TOOLTIP
+					Children:
+						Image@POWER_ICON:
+							X: PARENT_WIDTH + 4
+							Y: 4
+							ImageCollection: power-icons
+							ImageName: power-normal
+		Container@HPF_ROOT:
+			Logic: LoadIngameHierarchicalPathFinderOverlayLogic
+			X: WINDOW_WIDTH - WIDTH - 260
+			Y: 40
+			Width: 175

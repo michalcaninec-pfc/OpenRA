@@ -14,6 +14,6 @@ if ! command -v dotnet >/dev/null 2>&1; then
 fi
 if [ "${1:-}" = '--demo' ]; then
     shift
-    set -- Launch.Map=ages-frontier Launch.Bot=ages "$@"
+    set -- Launch.Map=ages-ironwood Launch.Bot=ages "$@"
 fi
 exec ./launch-game.sh Game.Mod=ages Graphics.Mode=Windowed Graphics.WindowedSize=1280,800 Game.ViewportEdgeScroll=false "$@"

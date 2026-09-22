@@ -1,0 +1,63 @@
+# The hut remains the drop-off/producer; Industry gives it conyard prerequisites.
+MHUT:
+	GrantConditionOnPrerequisite@CONYARD:
+		Condition: industrial-conyard
+		Prerequisites: modern.age
+	ProvidesPrerequisite@CONYARD:
+		Prerequisite: fact
+		RequiresCondition: industrial-conyard
+
+WATCHTOWER:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 2
+		Prerequisites: mhut, mbarracks
+		Description: ages-watchtower-desc
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: ages-watchtower
+	Health:
+		HP: 25000
+	Armor:
+		Type: Wood
+	Selectable:
+		Bounds: 2048,2389,0,-512
+		DecorationBounds: 1536,2048,0,-512
+	RevealsShroud:
+		Range: 7c0
+	Armament:
+		Weapon: WatchtowerArrow
+		LocalOffset: 0,0,768
+	AttackOmni:
+		RequiresCondition: !build-incomplete
+	AutoTarget:
+		ScanRadius: 6
+	Power:
+		Amount: 0
+	SpawnActorsOnSell:
+		ActorTypes: worker
+		GuaranteedActorTypes: worker
+	RenderSprites:
+		Image: watchtower
+
+PALISADE:
+	Inherits: WOOD
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 1
+		Prerequisites: mhut
+		Description: ages-palisade-desc
+		IconPalette: effect
+	Valued:
+		Cost: 20
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: ages-palisade
+	Health:
+		HP: 15000
+	RenderSprites:
+		Image: wood

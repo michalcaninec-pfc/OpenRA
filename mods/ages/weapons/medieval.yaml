@@ -1,4 +1,5 @@
 MedievalArrow:
+	Report: ages-bow-1.wav, ages-bow-2.wav
 	ReloadDelay: 40
 	Range: 4c0
 	ValidTargets: GroundActor
@@ -25,3 +26,47 @@ CavalryLance:
 	ReloadDelay: 30
 	Warhead@1Dam: TargetDamage
 		Damage: 4500
+
+EarlyMusket:
+	TargetActorCenter: true
+	ReloadDelay: 65
+	Range: 5c0
+	ValidTargets: GroundActor
+	InvalidTargets: AirborneActor
+	Report: gun11.aud
+	Projectile: InstantHit
+	Warhead@Damage: TargetDamage
+		Damage: 2800
+		ValidTargets: GroundActor
+		InvalidTargets: AirborneActor
+		Versus:
+			None: 100
+			Wood: 20
+			Light: 25
+			Heavy: 10
+			Concrete: 5
+		DamageTypes: BulletDeath
+
+EarlyCannon:
+	Inherits: 155mm
+	ReloadDelay: 110
+	Range: 9c0
+	MinRange: 2c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 7000
+		Versus:
+			None: 70
+			Wood: 100
+			Light: 70
+			Heavy: 45
+			Concrete: 80
+
+PikeThrust:
+	Report: ages-pike-1.wav, ages-pike-2.wav
+
+WatchtowerArrow:
+	Inherits: MedievalArrow
+	Range: 6c0
+	ReloadDelay: 35
+	Warhead@Damage: SpreadDamage
+		Damage: 1400

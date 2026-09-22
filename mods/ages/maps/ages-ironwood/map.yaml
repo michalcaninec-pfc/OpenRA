@@ -1,12 +1,21 @@
 MapFormat: 12
+
 RequiresMod: ages
-Title: Ages - Validation
+
+Title: Ages - Ironwood Crossroads
+
 Author: OpenRA Ages
+
 Tileset: TEMPERAT
+
 MapSize: 130,98
+
 Bounds: 1,1,128,96
-Visibility: MissionSelector
+
+Visibility: Lobby
+
 Categories: Conquest
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -15,23 +24,19 @@ Players:
 		Faction: england
 	PlayerReference@Creeps:
 		Name: Creeps
-		Enemies: Multi0, Multi1
 		NonCombatant: True
 		Faction: russia
 	PlayerReference@Multi0:
 		Name: Multi0
 		Playable: True
-		LockFaction: True
 		Faction: england
-		Enemies: Creeps, Multi1
 		Spawn: 1
 	PlayerReference@Multi1:
 		Name: Multi1
 		Playable: True
-		LockFaction: True
 		Faction: russia
-		Enemies: Creeps, Multi0
 		Spawn: 2
+
 Actors:
 	Spawn1: mpspawn
 		Owner: Neutral
@@ -4473,5 +4478,3 @@ Actors:
 	Tree1469: t03
 		Owner: Neutral
 		Location: 125,27
-
-Rules: rules.yaml

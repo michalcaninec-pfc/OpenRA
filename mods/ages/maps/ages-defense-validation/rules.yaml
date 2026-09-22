@@ -1,0 +1,58 @@
+World:
+	LuaScript:
+		Scripts: test.lua
+	MapOptions:
+		ShortGameCheckboxEnabled: False
+		GameSpeed: fastest
+		GameSpeedDropdownLocked: True
+Player:
+	PlayerResources:
+		DefaultCash: 5000
+		SelectableCash: 5000
+	Shroud:
+		FogCheckboxEnabled: False
+		FogCheckboxLocked: True
+		ExploredMapCheckboxEnabled: True
+		ExploredMapCheckboxLocked: True
+	ModularBot@defense-test:
+		Name: ages-bot
+		Type: ages-defense-test
+	GrantConditionOnBotOwner@defense-test:
+		Condition: defense-test
+		Bots: ages-defense-test
+	BaseBuilderBotModule@defense-test:
+		RequiresCondition: defense-test
+		ConstructionYardTypes: mhut, mhut.start
+		DefenseTypes: watchtower, palisade, brik, ftur
+		PowerTypes: powr
+		ProductionTypes: barr
+		InititalMinimumRefineryCount: 0
+		AdditionalMinimumRefineryCount: 0
+		ProductionMinCashRequirement: 20
+		NewProductionCashThreshold: 0
+		BuildingFractions:
+			watchtower: 100
+			palisade: 100
+			brik: 100
+			powr: 100
+			barr: 100
+			ftur: 100
+		BuildingLimits:
+			watchtower: 1
+			palisade: 3
+			brik: 2
+			powr: 1
+			barr: 1
+			ftur: 1
+AGE.TARGET:
+	Inherits: E1
+	-Buildable:
+	-AttackMove:
+	-AttackFrontal:
+	-Armament@PRIMARY:
+	-Armament@GARRISONED:
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	RenderSprites:
+		Image: e1

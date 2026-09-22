@@ -29,6 +29,7 @@ namespace OpenRA.Mods.Common.Widgets
 	{
 		public ActorInfo Actor;
 		public string Name;
+		public string DisplayName;
 		public HotkeyReference Hotkey;
 		public Sprite Sprite;
 		public PaletteReference Palette;
@@ -77,6 +78,9 @@ namespace OpenRA.Mods.Common.Widgets
 		public readonly string SymbolsFont = "Symbols";
 
 		public readonly bool DrawTime = true;
+
+		// Optional readable cards: vanilla palettes retain their compact icon layout.
+		public readonly bool ShowNamesAndCosts = false;
 
 		[FluentReference]
 		public string ReadyText = "";
@@ -524,6 +528,8 @@ namespace OpenRA.Mods.Common.Widgets
 				{
 					Actor = item,
 					Name = item.Name,
+					DisplayName = ShowNamesAndCosts ? WidgetUtils.TruncateText(FluentProvider.GetMessage(
+						item.TraitInfos<TooltipInfo>().First(t => t.EnabledByDefault).Name), IconSize.X - 8, overlayFont) : null,
 					Hotkey = DisplayedIconCount < HotkeyCount ? hotkeys[DisplayedIconCount] : null,
 					Sprite = icon.Image,
 					Palette = worldRenderer.Palette(palette),
@@ -552,6 +558,11 @@ namespace OpenRA.Mods.Common.Widgets
 				return;
 
 			var buildableItems = CurrentQueue.BuildableItems();
+
+			// Optional card background sits behind both the sprite and its labels.
+			if (ShowNamesAndCosts)
+				foreach (var icon in icons.Values)
+					WidgetUtils.FillRectWithColor(new Rectangle((int)icon.Pos.X, (int)icon.Pos.Y, IconSize.X, IconSize.Y), Color.FromArgb(255, 29, 35, 41));
 
 			// Icons
 			Game.Renderer.EnableAntialiasingFilter();
@@ -583,6 +594,17 @@ namespace OpenRA.Mods.Common.Widgets
 			// Overlays
 			foreach (var icon in icons.Values)
 			{
+				if (ShowNamesAndCosts)
+				{
+					var nameSize = overlayFont.Measure(icon.DisplayName);
+					overlayFont.DrawTextWithContrast(icon.DisplayName,
+						icon.Pos + new Vector2((IconSize.X - nameSize.X) / 2, IconSize.Y - 28), TextColor, Color.Black, 1);
+					var price = "$" + CurrentQueue.GetProductionCost(icon.Actor).ToString(NumberFormatInfo.CurrentInfo);
+					var priceSize = overlayFont.Measure(price);
+					overlayFont.DrawTextWithContrast(price,
+						icon.Pos + new Vector2((IconSize.X - priceSize.X) / 2, IconSize.Y - 14), Color.Gold, Color.Black, 1);
+				}
+
 				var total = icon.Queued.Count;
 				if (total > 0)
 				{

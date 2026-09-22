@@ -1,0 +1,49 @@
+AgesTabBuilding: E
+	Description: ages-tab-building
+	Types: Production
+	Contexts: player
+
+AgesTabWorker: I
+	Description: ages-tab-worker
+	Types: Production
+	Contexts: player
+
+AgesTabResearch: R
+	Description: ages-tab-research
+	Types: Production
+	Contexts: player
+
+AgesTabMedieval: T
+	Description: ages-tab-medieval
+	Types: Production
+	Contexts: player
+
+AgesTabGunpowder: Y
+	Description: ages-tab-gunpowder
+	Types: Production
+	Contexts: player
+
+AgesTabInfantry: U
+	Description: ages-tab-infantry
+	Types: Production
+	Contexts: player
+
+AgesTabVehicle: V Ctrl
+	Description: ages-tab-vehicle
+	Types: Production
+	Contexts: player
+
+AgesTabDefense: D Ctrl
+	Description: ages-tab-defense
+	Types: Production
+	Contexts: player
+
+AgesTabAircraft: F Ctrl
+	Description: ages-tab-aircraft
+	Types: Production
+	Contexts: player
+
+AgesTabShip: N Ctrl
+	Description: ages-tab-ship
+	Types: Production
+	Contexts: player

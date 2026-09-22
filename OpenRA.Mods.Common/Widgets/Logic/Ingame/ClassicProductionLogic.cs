@@ -49,7 +49,9 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			button.IsHighlighted = () => queues.Contains(palette.CurrentQueue);
 
 			var chromeName = button.ProductionGroup.ToLowerInvariant();
-			var icon = button.Get<ImageWidget>("ICON");
+			var icon = button.GetOrNull<ImageWidget>("ICON");
+			if (icon == null)
+				return;
 			icon.GetImageName = () => button.IsDisabled() ? chromeName + "-disabled" :
 				queues.Any(q => q.AllQueued().Any(i => i.Done)) ? chromeName + "-alert" : chromeName;
 		}
@@ -174,7 +176,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			if (containerWidget == null)
 				return;
 
-			var sidebarProductionHeight = containerWidget.Bounds.Y;
+			var sidebarProductionHeight = containerWidget.Bounds.Y + productionPalette.Bounds.Y;
 
 			// Check if icon heights exceed y resolution
 			var maxItemsHeight = screenHeight - sidebarProductionHeight;

@@ -18,29 +18,55 @@ Player:
 		RefineryTypes: mhut,mhut.start, proc
 		InitialHarvesters: 6
 	UnitBuilderBotModule@medieval:
-		RequiresCondition: enable-ages-ai && !modern-age
-		UnitQueues: Infantry
+		RequiresCondition: enable-ages-ai && !gunpowder-age
+		UnitQueues: Medieval
 		ProductionMinCashRequirement: 50
 		UnitsToBuild:
-			worker: 20
 			pikeman: 45
 			archer: 35
 			rider: 20
 		UnitLimits:
-			worker: 6
-			pikeman: 12
-			archer: 10
-			rider: 5
-	UnitBuilderBotModule@advance:
+			pikeman: 8
+			archer: 6
+			rider: 3
+	UnitBuilderBotModule@economy:
 		RequiresCondition: enable-ages-ai && !modern-age
-		UnitQueues: Infantry
-		ProductionMinCashRequirement: 3200
+		UnitQueues: Worker
+		ProductionMinCashRequirement: 80
 		UnitsToBuild:
-			modern.age: 1
+			worker: 100
+		UnitLimits:
+			worker: 6
+	UnitBuilderBotModule@gunpowder:
+		RequiresCondition: enable-ages-ai && gunpowder-age && !modern-age
+		UnitQueues: Gunpowder
+		ProductionMinCashRequirement: 500
+		UnitsToBuild:
+			musketeer: 80
+			field.cannon: 20
+		UnitLimits:
+			musketeer: 8
+			field.cannon: 2
+	UnitBuilderBotModule@advance-gunpowder:
+		RequiresCondition: enable-ages-ai && !gunpowder-age
+		UnitQueues: Research
+		ProductionMinCashRequirement: 2000
+		UnitsToBuild:
+			gunpowder.age: 100
+		UnitLimits:
+			gunpowder.age: 1
+		UnitDelays:
+			gunpowder.age: 1500
+	UnitBuilderBotModule@advance-industrial:
+		RequiresCondition: enable-ages-ai && gunpowder-age && !modern-age
+		UnitQueues: Research
+		ProductionMinCashRequirement: 4800
+		UnitsToBuild:
+			modern.age: 100
 		UnitLimits:
 			modern.age: 1
 		UnitDelays:
-			modern.age: 2500
+			modern.age: 4500
 	BaseBuilderBotModule@rush:
 		RequiresCondition: enable-ages-ai && modern-age
 		MinimumExcessPower: 0
@@ -101,7 +127,7 @@ Player:
 		RequiresCondition: enable-ages-ai
 		SquadSize: 8
 		NavalUnitsTypes: ss, msub, dd, ca, lst, pt
-		ExcludeFromSquadsTypes: worker, modern.age, harv, mcv, dog, badr.bomber, u2
+		ExcludeFromSquadsTypes: worker, gunpowder.age, modern.age, harv, mcv, dog, badr.bomber, u2
 		ConstructionYardTypes: mhut,mhut.start, fact
 		AirUnitsTypes: mig, yak, heli, hind, mh60
 		AircraftTargetType: AirborneActor

@@ -91,6 +91,7 @@ Rules:
 	ra|rules/map-generators.yaml
 	ages|rules/modern-gates.yaml
 	ages|rules/medieval.yaml
+	ages|rules/defenses.yaml
 
 Sequences:
 	ra|sequences/ships.yaml
@@ -102,6 +103,8 @@ Sequences:
 	ra|sequences/misc.yaml
 	ra|sequences/decorations.yaml
 	ages|sequences/medieval.yaml
+	ages|sequences/gunpowder.yaml
+	ages|sequences/defenses.yaml
 
 TileSets:
 	ra|tilesets/snow.yaml
@@ -130,7 +133,7 @@ ChromeLayout:
 	common|chrome/ingame-info-lobby-options.yaml
 	common|chrome/ingame-menu.yaml
 	ra|chrome/ingame-observer.yaml
-	ra|chrome/ingame-player.yaml
+	ages|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	ra|chrome/ingame-debug.yaml
 	common|chrome/ingame-debug-hpf.yaml
@@ -217,6 +220,7 @@ Hotkeys:
 	common|hotkeys/editor.yaml
 	common|hotkeys/control-groups.yaml
 	ra|hotkeys.yaml
+	ages|hotkeys.yaml
 
 LoadScreen: LogoStripeLoadScreen
 	Image: ra|uibits/loadscreen.png

@@ -3,13 +3,13 @@ PIKEMAN:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Infantry
+		Queue: Medieval
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 15
 		Prerequisites: mbarracks
 		Description: actor-pikeman.description
 	Valued:
-		Cost: 10
+		Cost: 40
 	Tooltip:
 		Name: actor-pikeman.name
 	UpdatesPlayerStatistics:
@@ -30,6 +30,9 @@ PIKEMAN:
 		RequiresCondition: parachute
 	AutoTarget:
 		ScanRadius: 5
+		InitialStance: AttackAnything
+	Selectable:
+		Bounds: 1195,1451,0,-512
 	-TakeCover:
 
 ARCHER:
@@ -40,7 +43,7 @@ ARCHER:
 	Tooltip:
 		Name: ages-archer
 	Valued:
-		Cost: 15
+		Cost: 60
 	Health:
 		HP: 4500
 	Armament:
@@ -56,7 +59,7 @@ RIDER:
 	Tooltip:
 		Name: ages-rider
 	Valued:
-		Cost: 50
+		Cost: 140
 	Health:
 		HP: 18000
 	Mobile:
@@ -66,13 +69,16 @@ RIDER:
 	WithInfantryBody:
 		DefaultAttackSequence: attack
 	Selectable:
-		Bounds: 1024,1280,0,-256
+		Bounds: 1451,1707,0,-683
+		DecorationBounds: 1024,1280,0,-597
 
 WORKER:
+	Selectable:
+		Bounds: 1195,1195,0,-427
 	Inherits: ^Infantry
 	Inherits@selection: ^SelectableEconomicUnit
 	Buildable:
-		Queue: Infantry
+		Queue: Worker
 		BuildAtProductionType: Worker
 		BuildPaletteOrder: 1
 		Prerequisites: mhut
@@ -80,7 +86,7 @@ WORKER:
 	Tooltip:
 		Name: ages-worker
 	Valued:
-		Cost: 110
+		Cost: 80
 	Health:
 		HP: 6000
 	Mobile:
@@ -96,6 +102,9 @@ WORKER:
 		Capacity: 20
 		Resources: Ore,Gems
 	DockClientManager:
+	SoundOnHarvest:
+		SoundFiles: ages-pick-1.wav, ages-pick-2.wav
+		Interval: 120
 	WithHarvestAnimation:
 	-WithInfantryBody:
 	WithFacingSpriteBody:
@@ -111,22 +120,43 @@ WORKER:
 			Ore: pip-yellow
 			Gems: pip-red
 
+GUNPOWDER.AGE:
+	Interactable:
+	ScriptTriggers:
+	Tooltip:
+		Name: ages-gunpowder-upgrade
+	Buildable:
+		Queue: Research
+		BuildAtProductionType: Research
+		BuildPaletteOrder: 1
+		Prerequisites: mbarracks, mhut, ~!gunpowder.age
+		BuildLimit: 1
+		BuildDuration: 750
+		BuildDurationModifier: 100
+		Description: ages-gunpowder-upgrade-desc
+	Valued:
+		Cost: 1800
+	RenderSprites:
+		Image: musketeer
+	ProvidesPrerequisite:
+		Prerequisite: gunpowder.age
+
 MODERN.AGE:
 	Interactable:
 	ScriptTriggers:
 	Tooltip:
 		Name: ages-upgrade
 	Buildable:
-		Queue: Infantry
+		Queue: Research
 		BuildAtProductionType: Research
 		BuildPaletteOrder: 99
-		Prerequisites: mbarracks, mhut, ~!modern.age
+		Prerequisites: mbarracks, mhut, ~gunpowder.age, ~!modern.age
 		BuildLimit: 1
-		BuildDuration: 750
+		BuildDuration: 1250
 		BuildDurationModifier: 100
 		Description: ages-upgrade-desc
 	Valued:
-		Cost: 3000
+		Cost: 4500
 	RenderSprites:
 		Image: fact
 	ProvidesPrerequisite:
@@ -139,7 +169,7 @@ MBARRACKS:
 		Description: ages-barracks-desc
 		BuildPaletteOrder: 1
 	Valued:
-		Cost: 100
+		Cost: 200
 	Tooltip:
 		Name: ages-barracks
 	RenderSprites:
@@ -148,7 +178,7 @@ MBARRACKS:
 	Power:
 		Amount: 0
 	Production:
-		Produces: Infantry, Soldier, Research
+		Produces: Infantry, Medieval, Gunpowder, Soldier, Research
 	ProvidesPrerequisite@medieval:
 		Prerequisite: mbarracks
 	SpawnActorsOnSell:
@@ -162,7 +192,7 @@ MHUT:
 		Description: ages-hut-desc
 		BuildPaletteOrder: 2
 	Valued:
-		Cost: 150
+		Cost: 250
 	Tooltip:
 		Name: ages-hut
 	Health:
@@ -173,7 +203,7 @@ MHUT:
 	Power:
 		Amount: 100
 	Production:
-		Produces: Building, Defense, Infantry, Worker
+		Produces: Building, Defense, Worker
 	Exit@WORKER:
 		ExitCell: 1,3
 		SpawnOffset: 0,1024,0
@@ -229,9 +259,97 @@ World:
 		DropdownLocked: true
 
 Player:
+	ClassicProductionQueue@Worker:
+		Type: Worker
+		DisplayOrder: 2
+		ReadyAudio: UnitReady
+		QueuedAudio: Training
+	ClassicProductionQueue@Research:
+		Type: Research
+		DisplayOrder: 3
+		ReadyAudio: NewOptions
+		QueuedAudio: Building
+	ClassicProductionQueue@Medieval:
+		Type: Medieval
+		DisplayOrder: 4
+		ReadyAudio: UnitReady
+		QueuedAudio: Training
+	ClassicProductionQueue@Gunpowder:
+		Type: Gunpowder
+		DisplayOrder: 5
+		ReadyAudio: UnitReady
+		QueuedAudio: Training
+	GrantConditionOnPrerequisite@GUNPOWDER:
+		Condition: gunpowder-age
+		Prerequisites: gunpowder.age
 	PlayerResources:
 		DefaultCash: 500
 		SelectableCash: 500,1000,3000,5000
 	GrantConditionOnPrerequisite@AGE:
 		Condition: modern-age
 		Prerequisites: modern.age
+
+MUSKETEER:
+	Inherits: PIKEMAN
+	Buildable:
+		Queue: Gunpowder
+		BuildPaletteOrder: 10
+		Prerequisites: mbarracks, ~gunpowder.age
+		Description: ages-musketeer-desc
+	Tooltip:
+		Name: ages-musketeer
+	Valued:
+		Cost: 120
+	Health:
+		HP: 5500
+	Mobile:
+		Speed: 55
+	Armament:
+		Weapon: EarlyMusket
+	WithInfantryBody:
+		DefaultAttackSequence: attack
+
+FIELD.CANNON:
+	Inherits: ARTY
+	Selectable:
+		Bounds: 1707,1707,0,-683
+		DecorationBounds: 1365,1451,0,-640
+	AutoTarget:
+		InitialStance: AttackAnything
+		ScanRadius: 9
+	RevealsShroud:
+		Range: 7c0
+	Buildable:
+		Queue: Gunpowder
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 20
+		Prerequisites: mbarracks, ~gunpowder.age
+		Description: ages-cannon-desc
+	Tooltip:
+		Name: ages-cannon
+	Valued:
+		Cost: 450
+	Health:
+		HP: 9000
+	Mobile:
+		Speed: 38
+		TurnSpeed: 8
+	Armament:
+		Weapon: EarlyCannon
+		LocalOffset: 400,0,150
+		MuzzleSequence: attack
+	-WithMuzzleOverlay:
+	WithAttackAnimation:
+		Sequence: attack
+		DelayRelativeTo: Attack
+	RenderSprites:
+		Image: fieldcannon
+	-ProducibleWithLevel:
+	-WithProductionIconOverlay:
+
+E1:
+	Valued:
+		Cost: 200
+E2:
+	Valued:
+		Cost: 240

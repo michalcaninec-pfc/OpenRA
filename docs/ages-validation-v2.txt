@@ -1,0 +1,121 @@
+Ages v2 final validation — macOS arm64, 2026-09-22
+
+Build: 0 warnings/errors.
+Rules, Fluent, sequences (4 tilesets) and maps: clean.
+Engine tests: 508 passed, 2 existing skips.
+Final in-engine E2E: PASS at tick 7750.
+Includes paid medieval production, actual ore income, both paid age upgrades,
+Musketeer / Field Cannon / Rifleman production, AI progression and enemy attack.
+All three Ironwood passages were traversed by actual engine pathfinding.
+All five medieval/gunpowder weapons killed their targets at valid ranges.
+Field Cannon hit at 9216 world units = 9 cells.
+Pikeman and Rider automatically pursued and killed a firing enemy Rifleman,
+without an Attack order to either tested melee unit; default AttackAnything verified.
+
+The human test buildings are healed and human workers alone have damage immunity.
+No funds, age prerequisites or AI economic advantages are injected.
+These protections exist only in the validation map, not Ironwood skirmishes.
+
+Selection geometry: all 8 standing facings of each of 6 custom unit sprites fit
+inside their declared mouse rectangles. Check: scripts/ages/check-selection-bounds.py.
+Infantry 28x34, worker 28x28, rider 34x40, cannon 40x40 screen pixels at base zoom.
+Damage hit shapes are unchanged. Both selection and contextual enemy targeting
+use the engine ScreenMap mouse bounds. Live mouse QA of the final rectangle change
+was unavailable: the Mac was initially locked; after unlocking, coordinate
+clicks still failed in the UI automation provider (noWindowsAvailable). Earlier visual UI checks confirmed
+separate military/economy/research cards, names, prices and era labels.
+
+Sound: 6 WAVs, mono 16-bit PCM 22050 Hz; 0.19–0.25 seconds, peak 0.131–0.171;
+no clipped samples. Runtime sound.log empty (no loading errors).
+Subjective listening is not part of the automated checks.
+
+Platform is OSX (Arm64)
+Engine version is {DEV_VERSION}
+Runtime: .NET CLR 10.0.12
+Internal mods:
+	cnc ({DEV_VERSION})
+	d2k ({DEV_VERSION})
+	ts-content ({DEV_VERSION})
+	ages ({DEV_VERSION})
+	cnc-content ({DEV_VERSION})
+	all ({DEV_VERSION})
+	ra ({DEV_VERSION})
+	d2k-content ({DEV_VERSION})
+	ra-content ({DEV_VERSION})
+	ts ({DEV_VERSION})
+External mods:
+	ra-{DEV_VERSION} ({DEV_VERSION})
+Using SDL 2.32.10 with OpenGL (Modern) renderer
+Desktop resolution: 1512x982
+Using resolution: 1280x800
+Using window scale 2,00
+OpenGL renderer: Apple M5
+OpenGL version: 4.1 Metal - 90.5
+Using default sound device
+Loading mod: ages
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 0 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+[2026-09-22T11:02:45] Game started.
+Lua debug: AGES HIT: musketeer damage=2800 distance=5120
+Lua debug: AGES HIT: rider damage=4500 distance=1024
+Lua debug: AGES HIT: archer damage=1200 distance=4096
+Lua debug: AGES HIT: rider damage=4500 distance=1024
+Lua debug: AGES V2: PASS independent military/economy queues and paid medieval production.
+Lua debug: AGES HIT: pikeman damage=2500 distance=1024
+Lua debug: AGES HIT: archer damage=1200 distance=4096
+Lua debug: AGES HIT: musketeer damage=2800 distance=5120
+Lua debug: AGES HIT: pikeman damage=2500 distance=1024
+Lua debug: AGES HIT: archer damage=1200 distance=4096
+Lua debug: AGES STATE: tick=250 workers=4 human=180+0 AI=20+0 worker=6 pikeman=1 archer=1 rider=1
+Lua debug: AGES HIT: field.cannon damage=931 distance=9216
+Lua debug: AGES HIT: archer damage=1200 distance=4096
+Lua debug: AGES HIT: archer damage=1200 distance=4096
+Lua debug: AGES HIT: field.cannon damage=1911 distance=9216
+Lua debug: AGES HIT: field.cannon damage=2009 distance=9216
+Lua debug: AGES STATE: tick=500 workers=4 human=180+0 AI=20+0 worker=6 pikeman=1 archer=1 rider=1
+Lua debug: AGES HIT: field.cannon damage=1274 distance=9216
+Lua debug: AGES STATE: tick=750 workers=4 human=180+0 AI=20+0 worker=6 pikeman=1 archer=1 rider=1
+Lua debug: AGES V2: PASS map route 24
+Lua debug: AGES V2: PASS map route 49
+Lua debug: AGES V2: PASS map route 74
+Lua debug: AGES STATE: tick=1000 workers=4 human=180+0 AI=20+0 worker=6 pikeman=1 archer=1 rider=1
+Lua debug: AGES V2: PASS combat: pikeman
+Lua debug: AGES V2: PASS combat: archer
+Lua debug: AGES V2: PASS combat: rider
+Lua debug: AGES V2: PASS combat: musketeer
+Lua debug: AGES V2: PASS combat: field.cannon
+Lua debug: AGES STATE: tick=1250 workers=4 human=180+650 AI=20+500 worker=6 pikeman=1 archer=1 rider=1
+Lua debug: AGES V2: PASS actual ore income.
+Lua debug: AGES STATE: tick=1500 workers=4 human=180+2000 AI=20+1688 worker=6 pikeman=3 archer=3 rider=1
+Lua debug: AGES STATE: tick=1750 workers=4 human=180+1402 AI=20+2137 worker=6 pikeman=5 archer=4 rider=3
+Lua debug: AGES STATE: tick=2000 workers=4 human=180+802 AI=20+1326 worker=6 pikeman=8 archer=6 rider=3
+Lua debug: AGES STATE: tick=2250 workers=4 human=180+700 AI=20+726 worker=6 pikeman=8 archer=6 rider=3
+Lua debug: AGES V2: PASS automatic melee pursuit: pikeman
+Lua debug: AGES V2: PASS automatic melee pursuit: rider
+Lua debug: AGES STATE: tick=2500 workers=4 human=180+1200 AI=20+1251 worker=6 pikeman=8 archer=6 rider=3 gunpowder.age=1
+Lua debug: AGES V2: PASS paid Gunpowder Age; industry still locked.
+Lua debug: AGES STATE: tick=2750 workers=4 human=180+1786 AI=20+1865 worker=6 pikeman=8 archer=6 rider=3 gunpowder.age=1 musketeer=1
+Lua debug: AGES V2: PASS Musketeer and Field Cannon trained.
+Lua debug: AGES STATE: tick=3000 workers=4 human=180+1630 AI=20+2530 worker=6 pikeman=8 archer=6 rider=3 gunpowder.age=1 musketeer=3 field.cannon=1
+Lua debug: AGES STATE: tick=3250 workers=4 human=180+1630 AI=20+2201 worker=6 pikeman=8 archer=6 rider=3 gunpowder.age=1 musketeer=5 field.cannon=1
+Lua debug: AGES STATE: tick=3500 workers=4 human=180+2130 AI=20+1835 worker=6 pikeman=8 archer=6 rider=3 gunpowder.age=1 musketeer=5 field.cannon=2
+Lua debug: AGES STATE: tick=3750 workers=4 human=180+2330 AI=20+2480 worker=6 pikeman=8 archer=6 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES V2: PASS AI attacks through Ironwood.
+Lua debug: AGES STATE: tick=4000 workers=4 human=180+3630 AI=20+2980 worker=6 pikeman=7 archer=6 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES STATE: tick=4250 workers=4 human=180+3630 AI=20+3980 worker=6 pikeman=4 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES STATE: tick=4500 workers=4 human=180+3630 AI=20+4480 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES STATE: tick=4750 workers=4 human=180+4130 AI=20+4480 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES STATE: tick=5000 workers=4 human=180+4630 AI=20+4985 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES STATE: tick=5250 workers=4 human=180+4733 AI=20+4810 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES STATE: tick=5500 workers=4 human=180+3833 AI=20+4910 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES STATE: tick=5750 workers=4 human=180+3433 AI=20+4510 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES STATE: tick=6000 workers=4 human=180+2533 AI=20+3610 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2
+Lua debug: AGES STATE: tick=6250 workers=4 human=180+1630 AI=20+3022 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2 modern.age=1
+Lua debug: AGES STATE: tick=6500 workers=4 human=180+3130 AI=20+3615 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=8 field.cannon=2 modern.age=1 powr=1 e1=1
+Lua debug: AGES V2: PASS paid Industrial Age after Gunpowder.
+Lua debug: AGES V2: PASS $200 Rifleman trained.
+Lua debug: AGES STATE: tick=6750 workers=4 human=180+2930 AI=20+3928 worker=6 pikeman=3 archer=4 rider=3 gunpowder.age=1 musketeer=7 field.cannon=2 modern.age=1 powr=1 barr=1 e1=2
+Lua debug: AGES STATE: tick=7000 workers=4 human=180+3430 AI=20+3382 worker=6 pikeman=3 archer=3 rider=3 gunpowder.age=1 musketeer=7 field.cannon=2 modern.age=1 powr=1 barr=1 e1=3
+Lua debug: AGES STATE: tick=7250 workers=4 human=180+3430 AI=20+2238 worker=6 pikeman=3 archer=3 rider=3 gunpowder.age=1 musketeer=7 field.cannon=2 modern.age=1 powr=1 barr=1 e1=4
+Lua debug: AGES STATE: tick=7500 workers=4 human=180+3430 AI=20+1436 worker=6 pikeman=3 archer=3 rider=3 gunpowder.age=1 musketeer=7 field.cannon=2 modern.age=1 powr=1 barr=1 e1=4
+Lua debug: AGES STATE: tick=7750 workers=4 human=180+4930 AI=20+1657 worker=6 pikeman=2 rider=2 gunpowder.age=1 musketeer=7 field.cannon=2 modern.age=1 powr=1 proc=1 barr=1 e1=4
+Lua debug: AGES V2: PASS E2E COMPLETE: three eras, separate queues, Ironwood routes, combat and AI progression.

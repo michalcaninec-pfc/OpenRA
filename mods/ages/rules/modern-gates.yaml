@@ -1,376 +1,376 @@
 # All stock production is locked until the player researches the modern age.
 FPWR:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.infonly, modern.age
+		Prerequisites: ~structures.france, ~techlevel.infonly, ~modern.age
 
 TENF:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.infonly, modern.age
+		Prerequisites: ~structures.france, ~techlevel.infonly, ~modern.age
 
 SYRF:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.medium, modern.age
+		Prerequisites: ~structures.france, ~techlevel.medium, ~modern.age
 
 SPEF:
 	Buildable:
-		Prerequisites: ~disabled, modern.age
+		Prerequisites: ~disabled, ~modern.age
 
 WEAF:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.medium, modern.age
+		Prerequisites: ~structures.france, ~techlevel.medium, ~modern.age
 
 DOMF:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.medium, modern.age
+		Prerequisites: ~structures.france, ~techlevel.medium, ~modern.age
 
 FIXF:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.medium, modern.age
+		Prerequisites: ~structures.france, ~techlevel.medium, ~modern.age
 
 FAPW:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.medium, modern.age
+		Prerequisites: ~structures.france, ~techlevel.medium, ~modern.age
 
 ATEF:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.high, modern.age
+		Prerequisites: ~structures.france, ~techlevel.high, ~modern.age
 
 PDOF:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.unrestricted, modern.age
+		Prerequisites: ~structures.france, ~techlevel.unrestricted, ~modern.age
 
 MSLF:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.unrestricted, modern.age
+		Prerequisites: ~structures.france, ~techlevel.unrestricted, ~modern.age
 
 FACF:
 	Buildable:
-		Prerequisites: ~structures.france, ~techlevel.medium, modern.age
+		Prerequisites: ~structures.france, ~techlevel.medium, ~modern.age
 
 V2RL:
 	Buildable:
-		Prerequisites: dome, ~vehicles.soviet, ~techlevel.medium, modern.age
+		Prerequisites: dome, ~vehicles.soviet, ~techlevel.medium, ~modern.age
 
 1TNK:
 	Buildable:
-		Prerequisites: ~vehicles.allies, ~techlevel.low, modern.age
+		Prerequisites: ~vehicles.allies, ~techlevel.low, ~modern.age
 
 2TNK:
 	Buildable:
-		Prerequisites: fix, ~vehicles.allies, ~techlevel.medium, modern.age
+		Prerequisites: fix, ~vehicles.allies, ~techlevel.medium, ~modern.age
 
 3TNK:
 	Buildable:
-		Prerequisites: fix, ~vehicles.soviet, ~techlevel.medium, modern.age
+		Prerequisites: fix, ~vehicles.soviet, ~techlevel.medium, ~modern.age
 
 4TNK:
 	Buildable:
-		Prerequisites: fix, stek, ~vehicles.soviet, ~techlevel.high, modern.age
+		Prerequisites: fix, stek, ~vehicles.soviet, ~techlevel.high, ~modern.age
 
 ARTY:
 	Buildable:
-		Prerequisites: dome, ~vehicles.allies, ~techlevel.medium, modern.age
+		Prerequisites: dome, ~vehicles.allies, ~techlevel.medium, ~modern.age
 
 HARV:
 	Buildable:
-		Prerequisites: proc, ~techlevel.infonly, modern.age
+		Prerequisites: proc, ~techlevel.infonly, ~modern.age
 
 MCV:
 	Buildable:
-		Prerequisites: fix, ~techlevel.medium, modern.age
+		Prerequisites: fix, ~techlevel.medium, ~modern.age
 
 JEEP:
 	Buildable:
-		Prerequisites: ~vehicles.allies, ~techlevel.low, modern.age
+		Prerequisites: ~vehicles.allies, ~techlevel.low, ~modern.age
 
 APC:
 	Buildable:
-		Prerequisites: ~vehicles.soviet, ~techlevel.low, modern.age
+		Prerequisites: ~vehicles.soviet, ~techlevel.low, ~modern.age
 
 MNLY:
 	Buildable:
-		Prerequisites: fix, ~techlevel.medium, modern.age
+		Prerequisites: fix, ~techlevel.medium, ~modern.age
 
 TRUK:
 	Buildable:
-		Prerequisites: ~disabled, modern.age
+		Prerequisites: ~disabled, ~modern.age
 
 MGG:
 	Buildable:
-		Prerequisites: atek, ~vehicles.england, ~techlevel.high, modern.age
+		Prerequisites: atek, ~vehicles.england, ~techlevel.high, ~modern.age
 
 MRJ:
 	Buildable:
-		Prerequisites: atek, ~vehicles.allies, ~techlevel.high, modern.age
+		Prerequisites: atek, ~vehicles.allies, ~techlevel.high, ~modern.age
 
 TTNK:
 	Buildable:
-		Prerequisites: tsla, stek, ~vehicles.russia, ~techlevel.high, modern.age
+		Prerequisites: tsla, stek, ~vehicles.russia, ~techlevel.high, ~modern.age
 
 FTRK:
 	Buildable:
-		Prerequisites: ~vehicles.soviet, ~techlevel.low, modern.age
+		Prerequisites: ~vehicles.soviet, ~techlevel.low, ~modern.age
 
 DTRK:
 	Buildable:
-		Prerequisites: stek, ~vehicles.ukraine, ~techlevel.high, modern.age
+		Prerequisites: stek, ~vehicles.ukraine, ~techlevel.high, ~modern.age
 
 CTNK:
 	Buildable:
-		Prerequisites: atek, ~vehicles.germany, ~techlevel.high, modern.age
+		Prerequisites: atek, ~vehicles.germany, ~techlevel.high, ~modern.age
 
 QTNK:
 	Buildable:
-		Prerequisites: fix, stek, ~vehicles.soviet, ~techlevel.high, modern.age
+		Prerequisites: fix, stek, ~vehicles.soviet, ~techlevel.high, ~modern.age
 
 STNK:
 	Buildable:
-		Prerequisites: atek, ~vehicles.france, ~techlevel.high, modern.age
+		Prerequisites: atek, ~vehicles.france, ~techlevel.high, ~modern.age
 
 MSLO:
 	Buildable:
-		Prerequisites: techcenter, ~techlevel.unrestricted, modern.age
+		Prerequisites: techcenter, ~techlevel.unrestricted, ~modern.age
 
 GAP:
 	Buildable:
-		Prerequisites: atek, ~structures.allies, ~techlevel.high, modern.age
+		Prerequisites: atek, ~structures.allies, ~techlevel.high, ~modern.age
 
 SPEN:
 	Buildable:
-		Prerequisites: anypower, ~structures.soviet, ~techlevel.low, modern.age
+		Prerequisites: anypower, ~structures.soviet, ~techlevel.low, ~modern.age
 
 SYRD:
 	Buildable:
-		Prerequisites: anypower, ~structures.allies, ~techlevel.low, modern.age
+		Prerequisites: anypower, ~structures.allies, ~techlevel.low, ~modern.age
 
 IRON:
 	Buildable:
-		Prerequisites: stek, ~structures.soviet, ~techlevel.unrestricted, modern.age
+		Prerequisites: stek, ~structures.soviet, ~techlevel.unrestricted, ~modern.age
 
 PDOX:
 	Buildable:
-		Prerequisites: atek, ~structures.allies, ~techlevel.unrestricted, modern.age
+		Prerequisites: atek, ~structures.allies, ~techlevel.unrestricted, ~modern.age
 
 TSLA:
 	Buildable:
-		Prerequisites: weap, ~structures.soviet, ~techlevel.medium, modern.age
+		Prerequisites: weap, ~structures.soviet, ~techlevel.medium, ~modern.age
 
 AGUN:
 	Buildable:
-		Prerequisites: dome, ~structures.allies, ~techlevel.medium, modern.age
+		Prerequisites: dome, ~structures.allies, ~techlevel.medium, ~modern.age
 
 DOME:
 	Buildable:
-		Prerequisites: proc, ~techlevel.medium, modern.age
+		Prerequisites: proc, ~techlevel.medium, ~modern.age
 
 PBOX:
 	Buildable:
-		Prerequisites: tent, ~structures.allies, ~techlevel.low, modern.age
+		Prerequisites: tent, ~structures.allies, ~techlevel.low, ~modern.age
 
 HBOX:
 	Buildable:
-		Prerequisites: tent, ~structures.allies, ~techlevel.medium, modern.age
+		Prerequisites: tent, ~structures.allies, ~techlevel.medium, ~modern.age
 
 GUN:
 	Buildable:
-		Prerequisites: tent, ~structures.allies, ~techlevel.medium, modern.age
+		Prerequisites: tent, ~structures.allies, ~techlevel.medium, ~modern.age
 
 FTUR:
 	Buildable:
-		Prerequisites: barr, ~structures.soviet, ~techlevel.low, modern.age
+		Prerequisites: barr, ~structures.soviet, ~techlevel.low, ~modern.age
 
 SAM:
 	Buildable:
-		Prerequisites: dome, ~structures.soviet, ~techlevel.medium, modern.age
+		Prerequisites: dome, ~structures.soviet, ~techlevel.medium, ~modern.age
 
 ATEK:
 	Buildable:
-		Prerequisites: weap, dome, ~structures.allies, ~techlevel.high, modern.age
+		Prerequisites: weap, dome, ~structures.allies, ~techlevel.high, ~modern.age
 
 WEAP:
 	Buildable:
-		Prerequisites: proc, ~techlevel.low, modern.age
+		Prerequisites: proc, ~techlevel.low, ~modern.age
 
 FACT:
 	Buildable:
-		Prerequisites: ~disabled, modern.age
+		Prerequisites: ~disabled, ~modern.age
 
 PROC:
 	Buildable:
-		Prerequisites: anypower, ~techlevel.infonly, modern.age
+		Prerequisites: anypower, ~techlevel.infonly, ~modern.age
 
 SILO:
 	Buildable:
-		Prerequisites: proc, ~techlevel.infonly, modern.age
+		Prerequisites: proc, ~techlevel.infonly, ~modern.age
 
 HPAD:
 	Buildable:
-		Prerequisites: dome, ~structures.allies, ~techlevel.medium, modern.age
+		Prerequisites: dome, ~structures.allies, ~techlevel.medium, ~modern.age
 
 AFLD:
 	Buildable:
-		Prerequisites: dome, ~structures.soviet, ~techlevel.medium, ~!structures.ukraine, modern.age
+		Prerequisites: dome, ~structures.soviet, ~techlevel.medium, ~!structures.ukraine, ~modern.age
 
 AFLD.Ukraine:
 	Buildable:
-		Prerequisites: dome, ~techlevel.medium, ~structures.ukraine, modern.age
+		Prerequisites: dome, ~techlevel.medium, ~structures.ukraine, ~modern.age
 
 POWR:
 	Buildable:
-		Prerequisites: ~techlevel.infonly, modern.age
+		Prerequisites: ~techlevel.infonly, ~modern.age
 
 APWR:
 	Buildable:
-		Prerequisites: dome, ~techlevel.medium, modern.age
+		Prerequisites: dome, ~techlevel.medium, ~modern.age
 
 STEK:
 	Buildable:
-		Prerequisites: weap, dome, ~structures.soviet, ~techlevel.high, modern.age
+		Prerequisites: weap, dome, ~structures.soviet, ~techlevel.high, ~modern.age
 
 BARR:
 	Buildable:
-		Prerequisites: anypower, ~structures.soviet, ~techlevel.infonly, modern.age
+		Prerequisites: anypower, ~structures.soviet, ~techlevel.infonly, ~modern.age
 
 KENN:
 	Buildable:
-		Prerequisites: anypower, ~structures.soviet, ~techlevel.infonly, modern.age
+		Prerequisites: anypower, ~structures.soviet, ~techlevel.infonly, ~modern.age
 
 TENT:
 	Buildable:
-		Prerequisites: anypower, ~structures.allies, ~techlevel.infonly, modern.age
+		Prerequisites: anypower, ~structures.allies, ~techlevel.infonly, ~modern.age
 
 FIX:
 	Buildable:
-		Prerequisites: weap, ~techlevel.medium, modern.age
+		Prerequisites: weap, ~techlevel.medium, ~modern.age
 
 SBAG:
 	Buildable:
-		Prerequisites: fact, ~structures.allies, ~techlevel.low, modern.age
+		Prerequisites: fact, ~structures.allies, ~techlevel.low, ~modern.age
 
 FENC:
 	Buildable:
-		Prerequisites: fact, ~structures.soviet, ~techlevel.low, modern.age
+		Prerequisites: fact, ~structures.soviet, ~techlevel.low, ~modern.age
 
 BRIK:
 	Buildable:
-		Prerequisites: fact, ~techlevel.medium, modern.age
+		Prerequisites: fact, ~techlevel.medium, ~modern.age
 
 MIG:
 	Buildable:
-		Prerequisites: ~afld, stek, ~techlevel.high, modern.age
+		Prerequisites: ~afld, stek, ~techlevel.high, ~modern.age
 
 YAK:
 	Buildable:
-		Prerequisites: ~afld, ~techlevel.medium, modern.age
+		Prerequisites: ~afld, ~techlevel.medium, ~modern.age
 
 TRAN:
 	Buildable:
-		Prerequisites: ~hpad, ~techlevel.medium, modern.age
+		Prerequisites: ~hpad, ~techlevel.medium, ~modern.age
 
 HELI:
 	Buildable:
-		Prerequisites: ~hpad, atek, ~techlevel.high, modern.age
+		Prerequisites: ~hpad, atek, ~techlevel.high, ~modern.age
 
 HIND:
 	Buildable:
-		Prerequisites: ~disabled, ~hpad, ~techlevel.medium, modern.age
+		Prerequisites: ~disabled, ~hpad, ~techlevel.medium, ~modern.age
 
 MH60:
 	Buildable:
-		Prerequisites: ~hpad, ~techlevel.medium, modern.age
+		Prerequisites: ~hpad, ~techlevel.medium, ~modern.age
 
 SS:
 	Buildable:
-		Prerequisites: ~spen, ~techlevel.low, modern.age
+		Prerequisites: ~spen, ~techlevel.low, ~modern.age
 
 MSUB:
 	Buildable:
-		Prerequisites: ~spen, stek, ~techlevel.high, modern.age
+		Prerequisites: ~spen, stek, ~techlevel.high, ~modern.age
 
 DD:
 	Buildable:
-		Prerequisites: ~syrd, dome, ~techlevel.medium, modern.age
+		Prerequisites: ~syrd, dome, ~techlevel.medium, ~modern.age
 
 CA:
 	Buildable:
-		Prerequisites: ~syrd, atek, ~techlevel.high, modern.age
+		Prerequisites: ~syrd, atek, ~techlevel.high, ~modern.age
 
 LST:
 	Buildable:
-		Prerequisites: ~techlevel.low, modern.age
+		Prerequisites: ~techlevel.low, ~modern.age
 
 PT:
 	Buildable:
-		Prerequisites: ~syrd, ~techlevel.low, modern.age
+		Prerequisites: ~syrd, ~techlevel.low, ~modern.age
 
 DOG:
 	Buildable:
-		Prerequisites: ~kenn, ~techlevel.infonly, modern.age
+		Prerequisites: ~kenn, ~techlevel.infonly, ~modern.age
 
 E1:
 	Buildable:
-		Prerequisites: ~barracks, ~techlevel.infonly, modern.age
+		Prerequisites: ~barracks, ~techlevel.infonly, ~modern.age
 
 E2:
 	Buildable:
-		Prerequisites: ~barr, ~techlevel.infonly, modern.age
+		Prerequisites: ~barr, ~techlevel.infonly, ~modern.age
 
 E3:
 	Buildable:
-		Prerequisites: ~barracks, ~techlevel.infonly, modern.age
+		Prerequisites: ~barracks, ~techlevel.infonly, ~modern.age
 
 E4:
 	Buildable:
-		Prerequisites: ~barr, ftur, ~techlevel.low, modern.age
+		Prerequisites: ~barr, ftur, ~techlevel.low, ~modern.age
 
 E6:
 	Buildable:
-		Prerequisites: ~barracks, ~techlevel.infonly, modern.age
+		Prerequisites: ~barracks, ~techlevel.infonly, ~modern.age
 
 SPY:
 	Buildable:
-		Prerequisites: ~!infantry.england, dome, ~tent, ~techlevel.medium, modern.age
+		Prerequisites: ~!infantry.england, dome, ~tent, ~techlevel.medium, ~modern.age
 
 SPY.England:
 	Buildable:
-		Prerequisites: ~infantry.england, dome, ~tent, ~techlevel.medium, modern.age
+		Prerequisites: ~infantry.england, dome, ~tent, ~techlevel.medium, ~modern.age
 
 E7:
 	Buildable:
-		Prerequisites: ~tent, atek, ~techlevel.high, modern.age
+		Prerequisites: ~tent, atek, ~techlevel.high, ~modern.age
 
 MEDI:
 	Buildable:
-		Prerequisites: ~tent, ~techlevel.infonly, modern.age
+		Prerequisites: ~tent, ~techlevel.infonly, ~modern.age
 
 MECH:
 	Buildable:
-		Prerequisites: ~tent, fix, ~techlevel.medium, modern.age
+		Prerequisites: ~tent, fix, ~techlevel.medium, ~modern.age
 
 THF:
 	Buildable:
-		Prerequisites: ~barr, dome, ~techlevel.medium, modern.age
+		Prerequisites: ~barr, dome, ~techlevel.medium, ~modern.age
 
 SHOK:
 	Buildable:
-		Prerequisites: ~barr, stek, tsla, ~infantry.russia, ~techlevel.high, modern.age
+		Prerequisites: ~barr, stek, tsla, ~infantry.russia, ~techlevel.high, ~modern.age
 
 Zombie:
 	Buildable:
-		Prerequisites: ~disabled, modern.age
+		Prerequisites: ~disabled, ~modern.age
 
 Ant:
 	Buildable:
-		Prerequisites: ~disabled, modern.age
+		Prerequisites: ~disabled, ~modern.age
 
 FireAnt:
 	Buildable:
-		Prerequisites: ~disabled, modern.age
+		Prerequisites: ~disabled, ~modern.age
 
 ScoutAnt:
 	Buildable:
-		Prerequisites: ~disabled, modern.age
+		Prerequisites: ~disabled, ~modern.age
 
 WarriorAnt:
 	Buildable:
-		Prerequisites: ~disabled, modern.age
+		Prerequisites: ~disabled, ~modern.age

@@ -9,7 +9,9 @@ World:
 Player:
 	Shroud:
 		FogCheckboxEnabled: False
+		FogCheckboxLocked: True
 		ExploredMapCheckboxEnabled: True
+		ExploredMapCheckboxLocked: True
 
 AGE.TARGET:
 	Inherits: E1
@@ -23,3 +25,10 @@ AGE.TARGET:
 	-AutoTargetPriority@ATTACKANYTHING:
 	RenderSprites:
 		Image: e1
+
+WORKER:
+	ExternalCondition@TEST:
+		Condition: test-protected
+	DamageMultiplier@TEST:
+		RequiresCondition: test-protected
+		Modifier: 0
