@@ -470,110 +470,180 @@ Container@PLAYER_WIDGETS:
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-building
 							TooltipText: ages-tab-building
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Building
 							Key: AgesTabBuilding
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 						ProductionTypeButton@WORKER:
 							X: 116
 							Y: 0
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-worker
 							TooltipText: ages-tab-worker
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Worker
 							Key: AgesTabWorker
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 						ProductionTypeButton@RESEARCH:
 							X: 0
 							Y: 27
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-research
 							TooltipText: ages-tab-research
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Research
 							Key: AgesTabResearch
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 						ProductionTypeButton@MEDIEVAL:
 							X: 116
 							Y: 27
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-medieval
 							TooltipText: ages-tab-medieval
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Medieval
 							Key: AgesTabMedieval
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 						ProductionTypeButton@GUNPOWDER:
 							X: 0
 							Y: 54
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-gunpowder
 							TooltipText: ages-tab-gunpowder
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Gunpowder
 							Key: AgesTabGunpowder
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 						ProductionTypeButton@INFANTRY:
 							X: 116
 							Y: 54
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-infantry
 							TooltipText: ages-tab-infantry
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Infantry
 							Key: AgesTabInfantry
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 						ProductionTypeButton@VEHICLE:
 							X: 0
 							Y: 81
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-vehicle
 							TooltipText: ages-tab-vehicle
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Vehicle
 							Key: AgesTabVehicle
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 						ProductionTypeButton@DEFENSE:
 							X: 116
 							Y: 81
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-defense
 							TooltipText: ages-tab-defense
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Defense
 							Key: AgesTabDefense
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 						ProductionTypeButton@AIRCRAFT:
 							X: 0
 							Y: 108
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-aircraft
 							TooltipText: ages-tab-aircraft
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Aircraft
 							Key: AgesTabAircraft
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 						ProductionTypeButton@SHIP:
 							X: 116
 							Y: 108
 							Width: 111
 							Height: 24
 							Font: TinyBold
+							Align: Left
+							LeftMargin: 26
 							Text: ages-tab-ship
 							TooltipText: ages-tab-ship
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: Ship
 							Key: AgesTabShip
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 4
+									ImageCollection: ages-production-icons
 				Button@SCROLL_UP_BUTTON:
 					X: 5
 					Y: PARENT_HEIGHT - 24

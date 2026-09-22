@@ -1,0 +1,16 @@
+# Reuse RA's white/disabled/gold glyphs at all supported UI scales.
+ages-production-icons:
+	Inherits: production-icons
+	Regions:
+		worker: 119, 68, 16, 16
+		worker-disabled: 119, 85, 16, 16
+		worker-alert: 119, 102, 16, 16
+		research: 102, 68, 16, 16
+		research-disabled: 102, 85, 16, 16
+		research-alert: 102, 102, 16, 16
+		medieval: 0, 119, 16, 16
+		medieval-disabled: 0, 136, 16, 16
+		medieval-alert: 0, 153, 16, 16
+		gunpowder: 34, 119, 16, 16
+		gunpowder-disabled: 34, 136, 16, 16
+		gunpowder-alert: 34, 153, 16, 16

@@ -117,6 +117,7 @@ Cursors:
 
 Chrome:
 	ra|chrome.yaml
+	ages|chrome.yaml
 
 Assemblies: OpenRA.Mods.Common.dll, OpenRA.Mods.Cnc.dll
 
