@@ -1,3 +1,12 @@
+# Ages bases allow a wider layout, including the inherited starting Gathering Hub.
+^BasicBuilding:
+	RequiresBuildableArea:
+		Adjacent: 6
+
+FACT:
+	BaseProvider:
+		Range: 24c0
+
 # Medieval melee prototype, available from either faction's barracks.
 PIKEMAN:
 	Inherits: ^Soldier
