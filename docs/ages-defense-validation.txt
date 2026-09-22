@@ -1,13 +1,21 @@
 Ages defense follow-up — macOS arm64, 2026-09-22
-Lint: clean, all four tilesets and five maps.
-Dedicated test: PASS at tick 1600.
-Test fixture starts with $5000 and grants age tokens after medieval checks.
-All defense structures use the ordinary paid production queues and placement.
+Lint: clean, four tilesets and the five maps included in this change.
+Final dedicated test: PASS at tick 1700.
+Fixture: $5000, scripted age tokens after medieval checks. All tested bot defense
+structures use ordinary paid production and placement. Two passive human-owned
+reference buildings (Tesla Coil and Watchtower) are created separately for visual
+comparison only; they are excluded from construction assertions.
+
 Checks: pre-industrial hut does not provide fact; tower/walls construct; tower
 kills an enemy automatically; existing starting hut grants fact after Industry;
 the other player's unupgraded hut does not; modern concrete walls and flame
-tower construct, with no actual FACT actor present. Revised 41x52 tower sprite visually checked beside the other buildings;
-its broader silhouette, mouse bounds and lowered arrow origin are in this run.
+tower construct, with no actual FACT actor present.
+
+Final watchtower: slender 23x44 px, compared in-game alongside original Tesla
+Coil's visible 18x36 px silhouette. Sprite base anchors agree within one pixel.
+The wide 41x52 draft was rejected. Click bounds and arrow origin match the final
+slender sprite. Coordinate mouse QA remains limited by noWindowsAvailable in the
+UI automation provider; sprite geometry and production/placement are verified.
 
 Platform is OSX (Arm64)
 Engine version is {DEV_VERSION}
@@ -34,24 +42,25 @@ OpenGL version: 4.1 Metal - 90.5
 Using default sound device
 Loading mod: ages
 UNSUPPORTED (log once): POSSIBLE ISSUE: unit 0 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
-[2026-09-22T11:18:52] Game started.
-Lua debug: DEFENSE STATE 100 tower=0 palisade=1 brik=0 ftur=0 cash=4931
-Lua debug: DEFENSE STATE 200 tower=0 palisade=1 brik=0 ftur=0 cash=4765
-Lua debug: DEFENSE STATE 300 tower=1 palisade=1 brik=0 ftur=0 cash=4710
-Lua debug: AGES DEFENSES: PASS watchtower built through normal production and placement.
+[2026-09-22T11:27:55] Game started.
+Lua debug: DEFENSE STATE 100 tower=0 palisade=2 brik=0 ftur=0 cash=4960
+Lua debug: DEFENSE STATE 200 tower=0 palisade=3 brik=0 ftur=0 cash=4890
+Lua debug: DEFENSE STATE 300 tower=0 palisade=3 brik=0 ftur=0 cash=4723
 Lua debug: DEFENSE STATE 400 tower=1 palisade=3 brik=0 ftur=0 cash=4690
+Lua debug: AGES DEFENSES: PASS watchtower built through normal production and placement.
 Lua debug: DEFENSE STATE 500 tower=1 palisade=3 brik=0 ftur=0 cash=4690
+Lua debug: DEFENSE STATE 600 tower=1 palisade=3 brik=0 ftur=0 cash=4690
 Lua debug: AGES DEFENSES: PASS paid palisades and automatic watchtower arrow combat.
 Lua debug: AGES DEFENSES: PASS existing starting hut automatically provides construction yard after Industry.
-Lua debug: DEFENSE STATE 600 tower=1 palisade=3 brik=0 ftur=0 cash=4431
-Lua debug: DEFENSE STATE 700 tower=1 palisade=3 brik=1 ftur=0 cash=4166
-Lua debug: DEFENSE STATE 800 tower=1 palisade=3 brik=1 ftur=0 cash=3950
-Lua debug: DEFENSE STATE 900 tower=1 palisade=3 brik=2 ftur=0 cash=3773
-Lua debug: DEFENSE STATE 1000 tower=1 palisade=3 brik=2 ftur=0 cash=3633
-Lua debug: DEFENSE STATE 1100 tower=1 palisade=3 brik=2 ftur=0 cash=3633
-Lua debug: DEFENSE STATE 1200 tower=1 palisade=3 brik=2 ftur=0 cash=3633
-Lua debug: DEFENSE STATE 1300 tower=1 palisade=3 brik=2 ftur=0 cash=3633
-Lua debug: DEFENSE STATE 1400 tower=1 palisade=3 brik=2 ftur=0 cash=3633
-Lua debug: DEFENSE STATE 1500 tower=1 palisade=3 brik=2 ftur=0 cash=3633
-Lua debug: DEFENSE STATE 1600 tower=1 palisade=3 brik=2 ftur=1 cash=3633
+Lua debug: DEFENSE STATE 700 tower=1 palisade=3 brik=0 ftur=0 cash=4502
+Lua debug: DEFENSE STATE 800 tower=1 palisade=3 brik=1 ftur=0 cash=4260
+Lua debug: DEFENSE STATE 900 tower=1 palisade=3 brik=1 ftur=0 cash=3986
+Lua debug: DEFENSE STATE 1000 tower=1 palisade=3 brik=2 ftur=0 cash=3786
+Lua debug: DEFENSE STATE 1100 tower=1 palisade=3 brik=2 ftur=0 cash=3700
+Lua debug: DEFENSE STATE 1200 tower=1 palisade=3 brik=2 ftur=0 cash=3700
+Lua debug: DEFENSE STATE 1300 tower=1 palisade=3 brik=2 ftur=0 cash=3700
+Lua debug: DEFENSE STATE 1400 tower=1 palisade=3 brik=2 ftur=0 cash=3700
+Lua debug: DEFENSE STATE 1500 tower=1 palisade=3 brik=2 ftur=0 cash=3700
+Lua debug: DEFENSE STATE 1600 tower=1 palisade=3 brik=2 ftur=0 cash=3700
+Lua debug: DEFENSE STATE 1700 tower=1 palisade=3 brik=2 ftur=1 cash=3700
 Lua debug: AGES DEFENSES: PASS DEFENSE E2E COMPLETE: medieval tower/walls and modern walls/flame turret constructed without a separate conyard.

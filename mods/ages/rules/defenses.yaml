@@ -24,8 +24,8 @@ WATCHTOWER:
 	Armor:
 		Type: Wood
 	Selectable:
-		Bounds: 2048,2389,0,-512
-		DecorationBounds: 1536,2048,0,-512
+		Bounds: 1365,2048,0,-427
+		DecorationBounds: 1024,1792,0,-427
 	RevealsShroud:
 		Range: 7c0
 	Armament:

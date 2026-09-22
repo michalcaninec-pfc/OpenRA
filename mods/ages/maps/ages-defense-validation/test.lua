@@ -21,6 +21,12 @@ Tick=function()
  print('DEFENSE STATE '..tick..' tower='..#towers..' palisade='..#walls..' brik='..#bot.GetActorsByType('brik')..' ftur='..#bot.GetActorsByType('ftur')..' cash='..bot.Cash)
  if #towers>0 and not towerTarget then
   local tower=towers[1]
+  -- Visual scale reference, not produced by the fixture or counted by its assertions.
+  local reference=Actor.Create('tsla',true,{Owner=human,Location=CPos.New(45,30)})
+  reference.Stance='HoldFire'
+  local preview=Actor.Create('watchtower',true,{Owner=human,Location=CPos.New(48,30)})
+  preview.Stance='HoldFire'
+  Camera.Position=preview.CenterPosition
   towerTarget=Actor.Create('age.target',true,{Owner=Player.GetPlayer('Creeps'),Location=tower.Location+CVec.New(0,5)})
   Trigger.OnDamaged(towerTarget,function(_,attacker,damage)
    if attacker==tower and damage>0 then hit=true end

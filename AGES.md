@@ -150,4 +150,4 @@ Defense regression: `Launch.Map=ages-defense-validation Launch.Bot=ages-defense-
 This dedicated fixture uses $5000 and scripted era tokens to isolate construction:
 real production/placement of Watchtower, Palisade, Concrete Wall and Flame Tower,
 automatic tower combat, and an existing hut gaining the conyard prerequisite.
-Passed at tick 1600. See `docs/ages-defense-validation.txt`.
+Final run passed at tick 1700. See `docs/ages-defense-validation.txt`.

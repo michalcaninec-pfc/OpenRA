@@ -44,8 +44,10 @@ audio samples are embedded. Musket and cannon reports reference installed RA
 content instead of copying it. Mining uses positional attenuation and a per-unit
 cooldown. The voice acknowledgements are still the stock RA voices.
 
-`watchtower-source-v2.png` is the revised, broader timber watchtower, using the
-first watchtower and original buildings as references. `prepare-watchtower.py`
-packs it to 41×52 px (original was 34×64 px) with remappable
-blue cloth and a separate icon. It currently has static make/damage states.
-Palisades reuse the installed game's WOOD wall sprites and connection frames.
+`watchtower-source.png` supplies the final slender tower. `prepare-watchtower.py`
+packs it to 23×44 px, calibrated against the stock Tesla Coil's visible 18×36 px
+silhouette (its underlying frame is 24×48). Both are anchored at the same ground
+level. The first tower was oversized at 34×64; watchtower-source-v2.png is a
+rejected broad draft, not the runtime source. The final tower has remappable blue
+cloth, a separate icon and static make/damage states. Palisades reuse the installed
+game's WOOD wall sprites and connection frames.
