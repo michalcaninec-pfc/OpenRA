@@ -2132,3 +2132,5 @@ Actors:
 	Greywater697: t03
 		Owner: Neutral
 		Location: 76,119
+
+Rules: rules.yaml
