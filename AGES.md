@@ -151,3 +151,7 @@ This dedicated fixture uses $5000 and scripted era tokens to isolate constructio
 real production/placement of Watchtower, Palisade, Concrete Wall and Flame Tower,
 automatic tower combat, and an existing hut gaining the conyard prerequisite.
 Final run passed at tick 1700. See `docs/ages-defense-validation.txt`.
+
+Camera controls: **W/A/S/D** pan up/left/down/right. The displaced commands
+are **K** (select units by type), **G** (attack-move), **V** (stop), and **J**
+(guard). These defaults apply only to Ages; unit stance shortcuts retain Alt.

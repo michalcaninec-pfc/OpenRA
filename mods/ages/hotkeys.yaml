@@ -47,3 +47,13 @@ AgesTabShip: N Ctrl
 	Description: ages-tab-ship
 	Types: Production
 	Contexts: player
+
+# WASD camera controls; keep displaced unit commands on unused keys.
+MapScrollUp: W
+MapScrollLeft: A
+MapScrollDown: S
+MapScrollRight: D
+SelectUnitsByType: K
+AttackMove: G
+Stop: V
+Guard: J
