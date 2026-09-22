@@ -1,0 +1,27 @@
+Greywater March validation — 2026-09-22
+
+Ages --check-yaml: no errors or warnings.
+Map refresh: success.
+
+Lua debug: GREYWATER PASS both starting armies
+Lua debug: GREYWATER tick 500 arrivals 0
+Lua debug: GREYWATER tick 1000 arrivals 0
+Lua debug: GREYWATER tick 1500 arrivals 0
+Lua debug: GREYWATER tick 2000 arrivals 0
+Lua debug: GREYWATER PASS route completed pikeman
+Lua debug: GREYWATER tick 2500 arrivals 1
+Lua debug: GREYWATER tick 3000 arrivals 1
+Lua debug: GREYWATER tick 3500 arrivals 1
+Lua debug: GREYWATER PASS route completed field.cannon
+Lua debug: GREYWATER tick 4000 arrivals 2
+Lua debug: GREYWATER PASS harvesting Multi0 resources 4500
+Lua debug: GREYWATER PASS harvesting Multi1 resources 4500
+Lua debug: GREYWATER E2E COMPLETE
+Lua debug: GREYWATER tick 4500 arrivals 2
+Lua debug: GREYWATER PASS harvesting Multi0 resources 4500
+Lua debug: GREYWATER PASS harvesting Multi1 resources 4500
+Lua debug: GREYWATER E2E COMPLETE
+Lua debug: GREYWATER tick 5000 arrivals 2
+Lua debug: GREYWATER PASS harvesting Multi0 resources 4500
+Lua debug: GREYWATER PASS harvesting Multi1 resources 5000
+Lua debug: GREYWATER E2E COMPLETE
