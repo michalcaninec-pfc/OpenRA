@@ -21,6 +21,7 @@ Players:
 	PlayerReference@Multi0:
 		Name: Multi0
 		Playable: True
+		LockFaction: True
 		Faction: england
 		Enemies: Creeps, Multi1
 		Spawn: 1
@@ -28,6 +29,7 @@ Players:
 		Name: Multi1
 		Bot: ages
 		Playable: True
+		LockFaction: True
 		Faction: russia
 		Enemies: Creeps, Multi0
 		Spawn: 2
